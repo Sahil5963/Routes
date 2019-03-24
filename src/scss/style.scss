@@ -340,8 +340,15 @@ select:-webkit-autofill:focus {
 
 // INDEX PAGE STYLING
 
-.app {
-  display: flex;
+.app{
+  height:100vh; 
+  position: relative;
+}
+
+main {
+  transition: all 0.2s;
+margin-left: 260px;
+position: relative !important;
 }
 
 .material-icons {
@@ -357,8 +364,17 @@ select:-webkit-autofill:focus {
 
 .sidebar {
   background-color: $primary-color;
-  height: 100vh;
+  position: fixed;
   overflow-y: auto;
+  overflow-x: visible;
+  
+  height: 100vh;
+
+  &__inner{
+    height: 100% !important;
+    position: relative;
+    padding: 0 !important;
+  }
 
   &__nav{
     margin: 0px;
@@ -410,8 +426,11 @@ select:-webkit-autofill:focus {
     width: 100px;
     padding-right: 0px;
     padding-left: 0px;
-    overflow-x:visible;
     transition: all 0.2s;
+
+    & ~ main{
+      margin-left: 100px;
+    }
 
     .sidebar__logo {
       width: 100%;
@@ -431,10 +450,15 @@ select:-webkit-autofill:focus {
     }
 
     .sidebar__nav {
-      padding-right: 4px;
-      padding-left: 4px;
+      padding-right: 0px;
+      padding-left: 0px;
       margin: 0px;
       
+    }
+
+    .sidebar__nav__item {
+      padding-right: 4px;
+      padding-left: 4px;
     }
 
     .sidebar__nav__link {
@@ -465,13 +489,32 @@ select:-webkit-autofill:focus {
     }
 
     .sidebar__nav__link__drop-down {
-      padding-left: 0px;
+      padding: 0px;
+      position: absolute !important;
+      background: $white-color;
+      color: $dark-color;
+      visibility: hidden;
+      height: auto !important;
+      transform: translateY(6px);
+      transition-duration: 1s;
+      opacity: 0;
+      border-radius: 0px 4px 4px 0px;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.25);
+      left: 100px;
     }
 
 
-    // .sidebar__nav__link--drop-down{
-    //   position: relative !important;
-    // }
+    .sidebar__nav__item--drop-down:hover{
+
+        & .sidebar__nav__link__drop-down {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 1s;
+        
+      }
+     
+    }
 
     // .sidebar__nav__link__drop-down {
     //   height: auto;
@@ -487,11 +530,27 @@ select:-webkit-autofill:focus {
     //   display: block;
     // }
 
-    // .sidebar__nav__link--drop-down-link {
-    //   font-size: 13px;
-    //   padding-top: 10px;
-    //   padding-bottom: 10px;
-    // }
+    .sidebar__nav__link--drop-down-link {
+      font-size: 13px;
+      padding: 16px;
+      border-radius: 0px;
+      margin-top: 0px;
+      color: $dark-color;
+      text-align: left;
+
+      @include mdc-ripple-surface;
+      @include mdc-ripple-radius-bounded;
+      @include mdc-states-base-color($primary-color);
+      @include mdc-states-hover-opacity(0.06);
+      @include mdc-states-focus-opacity(0.1);
+      @include mdc-states-press-opacity(0.18);
+
+      &.active{
+        background-color: rgba($primary-color,0.2);
+        color: $primary-color;
+      }
+
+    }
 
   }
 
@@ -499,7 +558,7 @@ select:-webkit-autofill:focus {
     padding: 10px 10px;
 
     &__item{
-      position: relative;
+      overflow-x: visible;
     }
 
     &__link {
@@ -514,6 +573,7 @@ select:-webkit-autofill:focus {
       display: flex;
       flex-wrap: wrap;
       font-size: 14px;
+      
       align-items: center;
       text-decoration: none;
       color: $white-color-dull1;
@@ -528,6 +588,7 @@ select:-webkit-autofill:focus {
 
       &--drop-down {
         width: 100%;
+        
 
         &.active {
           background-color: rgba(255, 255, 255, 0.1) !important;
@@ -560,7 +621,7 @@ select:-webkit-autofill:focus {
         overflow: hidden;
         transition: height 0.3s ease-out;
         height: 0;
-        padding-left: 10px;
+        padding-left: 0px;
 
       }
 

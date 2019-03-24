@@ -24,9 +24,7 @@ toggleMenu.addEventListener("click", () => {
   }
 });
 
-const sidebarDropdown = document.querySelectorAll(
-  ".sidebar__nav__link--drop-down"
-);
+
 
 // sidebarDropdown.addEventListener("click", () => {
 //   if (!sidebarDropdown.nextElementSibling.classList.contains("active")) {
@@ -82,24 +80,51 @@ function expandSection(element) {
   element.setAttribute("data-collapsed", "false");
 }
 
-
+const sidebarDropdown = document.querySelectorAll(
+  ".sidebar__nav__link--drop-down"
+);
 
 sidebarDropdown.forEach((dropDown) => {
 
-    dropDown.addEventListener("click", () => {
-
-            let section = dropDown.nextElementSibling;
-            let isCollapsed = section.getAttribute("data-collapsed") === "true";
+  dropDown.addEventListener("click", () => {
+    if (sidebar.classList.contains('sidebar--expanded')) { 
+    let section = dropDown.nextElementSibling;
+    let isCollapsed = section.getAttribute("data-collapsed") === "true";
     
-            if (isCollapsed) {
-                expandSection(section);
-                section.setAttribute("data-collapsed", "false");
-            } else {
-                collapseSection(section);
-            }
-        
-    });
+    if (isCollapsed) {
+      expandSection(section);
+      section.setAttribute("data-collapsed", "false");
+
+
+    } else {
+      collapseSection(section);
+    
+    }
+  }
+  });
+
+
+
+
 });
+
+sidebarDropdown.forEach((dropDown) => {
+
+  dropDown.addEventListener("mouseover", () => {
+    if (sidebar.classList.contains('sidebar--shrinked')) {
+      let offsets = dropDown.getBoundingClientRect();
+      let top = offsets.top;
+      let left = offsets.left;
+
+      let section = dropDown.nextElementSibling;
+      section.setAttribute("style", "top:" + top + "px;");
+    }
+  
+  })
+  
+});
+
+
 
 
 
