@@ -1,0 +1,42 @@
+@import 'variables';
+
+
+
+
+
+
+.font{
+  font-family: 'Open Sans', sans-serif !important;
+  }
+
+.heading1{
+    font-size: 28px;
+}
+
+.heading2{
+  font-size: 24px;
+}
+
+.heading3{
+  font-size: 24px;
+}
+
+.heading4{
+  font-size: 18px;
+}
+
+.heading5{
+  font-size: 14px;
+}
+
+.text-black-normal{
+  color: $balck-color-normal;
+}
+
+// label{
+//   font-size: 14px;
+// }
+
+.text-bold{
+  font-weight: 700;
+}

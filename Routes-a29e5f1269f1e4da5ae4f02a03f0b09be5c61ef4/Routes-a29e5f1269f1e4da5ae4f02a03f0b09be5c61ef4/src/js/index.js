@@ -2,7 +2,6 @@ require("../scss/style.scss");
 require("../login.html");
 require("../sighnup.html");
 require("../index.html");
-require("../train_profile.html");
 
 
 

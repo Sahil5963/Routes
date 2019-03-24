@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fleet Management - Train Profile</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+</head>
+
+<body >
+
+    <aside class="sidebar  sidebar--expanded" id="sidebar">
+        <div class="sidebar__logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="40" >
+                <g id="Group_173" data-name="Group 173" transform="translate(0)">
+                  <g id="microsoft-teams">
+                    <g id="Group_172" data-name="Group 172">
+                      <path id="Path_33" data-name="Path 33" d="M34.243,15.276a3.617,3.617,0,1,0-.778-1.154,3.7,3.7,0,0,0,.778,1.154Zm-1.06,3.36V29.545H35a10.345,10.345,0,0,0,1.86-.177,5.8,5.8,0,0,0,1.762-.615,3.929,3.929,0,0,0,1.313-1.159,3,3,0,0,0,.518-1.809V18.637Zm-5.892-4.573A3.517,3.517,0,0,0,28.7,13.78a3.626,3.626,0,0,0,0-6.68,3.519,3.519,0,0,0-1.408-.284,3.471,3.471,0,0,0-1.4.284c-.33.141-.433.324-.887.545v5.589c.455.223.557.4.887.545a3.467,3.467,0,0,0,1.4.284ZM25,32.43c.455.1.618.175.941.219a7.732,7.732,0,0,0,1.067.078,8.059,8.059,0,0,0,1.639-.177,4.843,4.843,0,0,0,1.554-.606,3.569,3.569,0,0,0,1.159-1.15,3.307,3.307,0,0,0,.457-1.808V16.364H25ZM0,35.909,23.636,40V0L0,4.091Z" fill="#fff"/>
+                    </g>
+                    <path id="Path_34" data-name="Path 34" d="M385.509,722.4l-10.908.664v2.516l4.091-.165v11.666l2.727.16V725.308l4.091-.182Z" transform="translate(-368.236 -710.127)" fill="#361ea0"/>
+                  </g>
+                  <text id="Railcomm" transform="translate(54 26)" fill="#fff" font-size="16" font-family="Quicksand-Regular, Quicksand"><tspan x="0" y="0">Railcomm</tspan></text>
+                </g>
+              </svg>
+        </div>
+
+        <ul class="sidebar__nav">
+            <li class="sidebar__nav__item">
+                <a class="sidebar__nav__link mdc-ripple-surface" href="#">
+                    <i class="material-icons">home</i>Dashboard</a>
+            </li>
+
+            <li class="sidebar__nav__item">
+                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down active" href="#">
+                    <i class="material-icons">directions_bus</i>
+                    <span> Fleet Management</span>
+
+                    <i class="material-icons trailing">
+                            expand_more
+                            </i>
+                </a>
+                    
+                    <div class="sidebar__nav__link__drop-down"  data-collapsed="false">
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active" href="train_profile.html">
+                                <i class="material-icons">
+                                        subdirectory_arrow_right
+                                        </i>
+                                        Train Profile
+                        </a>
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                                <i class="material-icons">
+                                        subdirectory_arrow_right
+                                        </i>
+                                        Coach
+                        </a>
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                            <i class="material-icons">
+                                    subdirectory_arrow_right
+                                    </i>
+                                    Wagons and Carriers
+                    </a>
+                    <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                        <i class="material-icons">
+                                subdirectory_arrow_right
+                                </i>
+                                Category
+                </a>
+                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                    <i class="material-icons">
+                            subdirectory_arrow_right
+                            </i>
+                            Facility Types
+            </a>
+                    </div>
+                
+            </li>
+
+            <li class="sidebar__nav__item">
+                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down " href="#">
+                    <i class="material-icons">
+                        location_on
+                        </i>
+                    <span> Trip Management</span>
+
+                    <i class="material-icons trailing">
+                            expand_more
+                            </i>
+                </a>
+                    
+                    <div class="sidebar__nav__link__drop-down"  data-collapsed="true">
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active" href="#">
+                                <i class="material-icons">
+                                        subdirectory_arrow_right
+                                        </i>
+                                        Destination / Station
+                        </a>
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                                <i class="material-icons">
+                                        subdirectory_arrow_right
+                                        </i>
+                                        Lane / Track
+
+                        </a>
+                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                            <i class="material-icons">
+                                    subdirectory_arrow_right
+                                    </i>
+                                    Route
+                    </a>
+                    <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                        <i class="material-icons">
+                                subdirectory_arrow_right
+                                </i>
+                                Schedule / Trips
+                </a>
+                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+                    <i class="material-icons">
+                            subdirectory_arrow_right
+                            </i>
+                            Report
+
+            </a>
+                    </div>
+                
+            </li>
+
+
+
+
+            </nav>
+
+    </aside>
+
+    <main>
+
+            
+        <header class="mdc-top-app-bar ">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" id="toggle-menu">menu</a>
+                    <span class="mdc-top-app-bar__title font">Fleet Management - Train Profile</span>
+                </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">settings</a>
+                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">textsms</a>
+                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">directions_subway</a>
+                      </section>
+            </div>
+        </header>
+
+        <div class="main-content mdc-top-app-bar--fixed-adjust">
+                <div class="mdc-layout-grid">
+                        <div class="mdc-layout-grid__inner">
+                          <div class="mdc-layout-grid__cell--span-12">
+                                <h3 class="heading3 text-black-normal">Add New Train </h3>
+                          </div>
+                        </div>
+
+                        <form class=" form__pages">
+                        <div class="mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell--span-6 form__pages__cells">
+                                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                <div class="mdc-notched-outline">
+                                                  <div class="mdc-notched-outline__leading"></div>
+                                                  <div class="mdc-notched-outline__notch">
+                                                    <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                  </div>
+                                                  <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                              </div>
+                                </div>
+                                <div class="mdc-layout-grid__cell--span-6 form__pages__cells">
+                                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                <div class="mdc-notched-outline">
+                                                  <div class="mdc-notched-outline__leading"></div>
+                                                  <div class="mdc-notched-outline__notch">
+                                                    <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                  </div>
+                                                  <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                              </div>
+                                </div>
+
+
+                                <div class="mdc-layout-grid__cell--span-4  form__pages__cells">
+                                        <div class="mdc-select demo-width-class mdc-select--full-width mdc-select--outlined">
+                                                <input type="hidden" name="enhanced-select">
+                                                <i class="mdc-select__dropdown-icon"></i>
+                                                <div class="mdc-select__selected-text"></div>
+                                                <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                                                  <ul class="mdc-list">
+                                                    <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                                                    <li class="mdc-list-item" data-value="grains">
+                                                      Bread, 
+                                                    </li>
+                                                    <li class="mdc-list-item" data-value="vegetables">
+                                                      Vegetables
+                                                    </li>
+                                                    <li class="mdc-list-item" data-value="fruit">
+                                                      Fruit
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                                <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                          <label class="mdc-floating-label">Pick a Food Group</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                      </div>
+                                              </div>
+                                    </div>
+          
+                                    <div class="mdc-layout-grid__cell--span-4  form__pages__cells">
+                                            <div class="mdc-select demo-width-class mdc-select--full-width mdc-select--outlined">
+                                                    <input type="hidden" name="enhanced-select">
+                                                    <i class="mdc-select__dropdown-icon"></i>
+                                                    <div class="mdc-select__selected-text"></div>
+                                                    <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                                                      <ul class="mdc-list">
+                                                        <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                                                        <li class="mdc-list-item" data-value="grains">
+                                                          Bread, Cereal
+                                                        </li>
+                                                        <li class="mdc-list-item" data-value="vegetables">
+                                                          Vegetables
+                                                        </li>
+                                                        <li class="mdc-list-item" data-value="fruit">
+                                                          Fruit
+                                                        </li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="mdc-notched-outline">
+                                                            <div class="mdc-notched-outline__leading"></div>
+                                                            <div class="mdc-notched-outline__notch">
+                                                              <label class="mdc-floating-label">Pick a Food Group</label>
+                                                            </div>
+                                                            <div class="mdc-notched-outline__trailing"></div>
+                                                          </div>
+                                                  </div>
+                                        </div>
+                                        <div class="mdc-layout-grid__cell--span-4  form__pages__cells">
+                                                <div class="mdc-select demo-width-class mdc-select--full-width mdc-select--outlined">
+                                                        <input type="hidden" name="enhanced-select">
+                                                        <i class="mdc-select__dropdown-icon"></i>
+                                                        <div class="mdc-select__selected-text"></div>
+                                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+                                                          <ul class="mdc-list">
+                                                            <li class="mdc-list-item mdc-list-item--selected" data-value="" aria-selected="true"></li>
+                                                            <li class="mdc-list-item" data-value="grains">
+                                                              Bread, 
+                                                            </li>
+                                                            <li class="mdc-list-item" data-value="vegetables">
+                                                              Vegetables
+                                                            </li>
+                                                            <li class="mdc-list-item" data-value="fruit">
+                                                              Fruit
+                                                            </li>
+                                                          </ul>
+                                                        </div>
+                                                        <div class="mdc-notched-outline">
+                                                                <div class="mdc-notched-outline__leading"></div>
+                                                                <div class="mdc-notched-outline__notch">
+                                                                  <label class="mdc-floating-label">Pick a Food Group</label>
+                                                                </div>
+                                                                <div class="mdc-notched-outline__trailing"></div>
+                                                              </div>
+                                                      </div>
+                                            </div>
+
+                            
+                                            <div class="mdc-layout-grid__cell--span-4 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+                                            <div class="mdc-layout-grid__cell--span-4 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+                                            <div class="mdc-layout-grid__cell--span-4 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell--span-4 form__pages__cells">
+                                                    <label class="heading5 text-black-normal text-bold">Select Coach Seat Type :</label>
+                                                    <div class="mdc-form-field my-3">
+                                                            <div class="mdc-radio">
+                                                              <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios" checked>
+                                                              <div class="mdc-radio__background">
+                                                                <div class="mdc-radio__outer-circle"></div>
+                                                                <div class="mdc-radio__inner-circle"></div>
+                                                              </div>
+                                                            </div>
+                                                            <label for="radio-1">Single Sitter</label>
+                                                            <div class="mdc-radio">
+                                                                    <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios" checked>
+                                                                    <div class="mdc-radio__background">
+                                                                      <div class="mdc-radio__outer-circle"></div>
+                                                                      <div class="mdc-radio__inner-circle"></div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <label for="radio-2">Multi Sitter</label>
+                                                          </div>
+                                            </div>
+                                            <div class="mdc-layout-grid__cell--span-8 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell--span-12 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell--span-12 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell--span-12 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+
+                                            <div class="mdc-layout-grid__cell--span-12 form__pages__cells">
+                                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+                                                            <div class="mdc-notched-outline">
+                                                              <div class="mdc-notched-outline__leading"></div>
+                                                              <div class="mdc-notched-outline__notch">
+                                                                <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+                                                              </div>
+                                                              <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                          </div>
+                                            </div>
+
+
+                              </div>
+                              </form>
+                            </div>
+                      </div>
+
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ipsum reprehenderit iste velit. Nulla sunt officiis quae dolores doloribus repellendus dolorum cumque ratione atque asperiores dolore deleniti iste quia odio amet inventore autem facere pariatur sint aperiam eum, facilis aliquid voluptas nesciunt. Eaque eius recusandae nihil iusto ut aliquam sint, suscipit assumenda, reiciendis architecto voluptatum doloribus dolores, excepturi aspernatur! Sint reiciendis provident illum debitis repellat fugiat eveniet? Quos repellat ullam magnam, eius molestiae debitis reprehenderit amet laborum consequatur dolorem nobis quas similique quam temporibus natus, voluptas nam dignissimos consectetur? Ipsa similique quisquam voluptatum ad quidem quod sint officiis amet nisi maxime velit cupiditate nam ipsam minus nesciunt, repudiandae tempora, reiciendis enim soluta voluptates explicabo consectetur maiores, rerum non? Sequi dolorum facilis adipisci, incidunt deleniti inventore natus, soluta, ipsam totam temporibus maxime est. Ex, natus dolor officia recusandae nam architecto nisi nobis. Dolores nesciunt laudantium, quia sequi sunt perspiciatis delectus odio dolorum sed cupiditate natus? Iusto ab ipsa quos debitis quas vero accusantium mollitia, sunt recusandae voluptatum distinctio ipsam? Error corporis omnis quod debitis fuga ab illum aperiam facilis, adipisci labore cumque tempora porro, praesentium saepe, unde voluptatem aspernatur provident? Qui quae officia dicta quia fuga eligendi aliquam eius, distinctio voluptates, harum voluptatum odit dolorem non ipsum totam error similique vitae aspernatur iste necessitatibus recusandae perspiciatis cumque quo! Molestiae pariatur quaerat cumque reprehenderit possimus dignissimos accusamus voluptate fugiat similique maiores quae corporis rem maxime porro, nulla atque laborum esse cum, ab voluptatum velit! Hic doloremque saepe sed ipsa eveniet, tempore itaque aut unde iure quasi, tenetur earum, non eligendi illo rerum laudantium nisi quod ex? Earum assumenda fugiat numquam ipsum aliquam libero autem atque, eveniet consectetur id quam quis neque, voluptate eaque ipsam ea hic sed quisquam cum dolore iure rerum commodi amet architecto. Quae aspernatur sapiente quasi ratione vero nemo facilis error blanditiis molestiae eaque. Sapiente pariatur voluptatem necessitatibus id deserunt libero molestias magni rem tempora consequuntur incidunt natus exercitationem, non quis quaerat dolore earum, totam laborum accusamus sint. Ipsum dignissimos cupiditate fugit tenetur magnam, quae reiciendis earum officiis. Facere exercitationem est harum consequuntur quibusdam vel blanditiis nesciunt similique, rerum cumque sit debitis eum et. Aperiam voluptate, hic fugiat pariatur obcaecati exercitationem perspiciatis! Repellat, harum blanditiis, fugiat minus odit minima unde culpa in alias, obcaecati facere eos tempora itaque. Eos, ipsum enim tempore magnam doloremque similique asperiores sapiente maxime ad fugiat cum cumque ipsa velit saepe corporis eius voluptates, quidem tempora perferendis natus rerum est aliquam assumenda ea? Nemo esse autem consequuntur aut ea minus harum, repellat porro inventore, deserunt corrupti labore. Fuga voluptatibus, voluptas quam itaque ratione animi corporis at! Deleniti quas vel nulla eos possimus deserunt enim eum fuga sapiente ducimus libero perferendis, ad perspiciatis laboriosam cumque minima dolorem? Animi hic libero officiis voluptate labore enim! Saepe unde ipsa aut, provident ipsam, expedita non quae blanditiis, sapiente fugit ab! Facere blanditiis ducimus adipisci. Molestias numquam odit eligendi adipisci assumenda ipsa beatae sed earum eaque labore iusto a, repellat voluptatibus maxime praesentium, porro minima temporibus quod blanditiis laudantium. Quis.
+            
+        </div>
+
+
+    </main>
+
+
+
+
+    <script src="js/app.js"></script>
+
+
+
+</body>
+
+</html>

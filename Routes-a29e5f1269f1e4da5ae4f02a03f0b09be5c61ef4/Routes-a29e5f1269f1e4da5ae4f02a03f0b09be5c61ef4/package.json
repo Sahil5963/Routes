@@ -12,19 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "@material/button": "^1.0.1",
-    "@material/form-field": "^1.0.1",
-    "@material/layout-grid": "^0.41.0",
-    "@material/list": "^1.0.1",
-    "@material/menu": "^1.0.1",
-    "@material/notched-outline": "^1.0.0",
-    "@material/radio": "^1.0.1",
     "@material/ripple": "^1.0.1",
-    "@material/select": "^1.0.1",
     "@material/textfield": "^1.0.1",
     "@material/theme": "^1.0.0",
     "@material/toolbar": "^1.0.1",
-    "@material/top-app-bar": "^1.0.1",
-    "@material/typography": "^1.0.0"
+    "@material/top-app-bar": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

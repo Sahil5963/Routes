@@ -1,44 +1,5 @@
 import { MDCTopAppBar } from "@material/top-app-bar/index";
 import { MDCRipple } from "@material/ripple";
-import { MDCTextField } from '@material/textfield';
-import { MDCSelect } from '@material/select';
-
-import { MDCList } from '@material/list';
-import { MDCNotchedOutline } from '@material/notched-outline';
-
-import {MDCFormField} from '@material/form-field';
-import {MDCRadio} from '@material/radio';
-
-
-
-const radio = [].map.call(document.querySelectorAll('.mdc-radio'), function (el) {
-  return new MDCRadio(el);
-});
-
-
-const notchedOutlines = [].map.call(document.querySelectorAll('.mdc-notched-outline'), function (el) {
-  return new MDCNotchedOutline(el);
-});
-
-
-const selectField = [].map.call(document.querySelectorAll('.mdc-select'), function (el) {
-  return new MDCSelect(el);
-});
-
-// selectField.listen('MDCSelect:change', () => {
-//   alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
-// });
-
-const lists = [].map.call(document.querySelectorAll('.mdc-list'), function (el) {
-  return new MDCList(el);
-});
-
-
-const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), function(el) {
-    return new MDCTextField(el);
-  });
-
-
 
 const buttonRipples = [].map.call(
   document.querySelectorAll(".mdc-ripple-surface"),
@@ -125,27 +86,16 @@ function expandSection(element) {
 
 sidebarDropdown.forEach((dropDown) => {
 
-  let section1 = dropDown.nextElementSibling;
-  let isCollapsed = section1.getAttribute("data-collapsed") === "false";
-    
-  if (isCollapsed) {
-    expandSection(section1);
-    section1.setAttribute("data-collapsed", "false");
-  }
-
-});
-
-sidebarDropdown.forEach((dropDown) => {
     dropDown.addEventListener("click", () => {
 
             let section = dropDown.nextElementSibling;
             let isCollapsed = section.getAttribute("data-collapsed") === "true";
+    
             if (isCollapsed) {
                 expandSection(section);
                 section.setAttribute("data-collapsed", "false");
             } else {
-              collapseSection(section);
-              section.setAttribute("data-collapsed", "true");
+                collapseSection(section);
             }
         
     });
