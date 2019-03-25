@@ -1,3 +1,164 @@
+@import '../variables';
+
+.table-page{
+    padding: 0px;
+
+    &__toolbar{
+        padding: 30px 20px 30px 20px;
+        box-shadow: 0px 1px 2px rgba(0,0,0,0.14);
+
+        & .add-button{
+            height: 48px !important;
+            align-content: center;
+            padding-left: 4px;
+            padding-right: 20px;
+            box-sizing: border-box;
+            text-transform: none;
+            font-weight: 400;
+            position: relative;
+            height: auto;
+            font-size: 16px;
+            letter-spacing: 0px;
+            @include mdc-button-container-fill-color($secondary-color);
+            @include mdc-button-shape-radius(40px);
+            @include mdc-button-ink-color($white-color);
+            @include mdc-states-hover-opacity(0.03);
+            @include mdc-states-focus-opacity(0.16);
+            @include mdc-states-press-opacity(0.2);
+
+            & .material-icons{
+                font-size: 40px;
+                width: auto;
+                margin-left: 0px;
+                height:auto;
+            }
+        }
+
+        & .mdc-select{
+            height: 46px;
+
+            & .mdc-select__native-control{
+                height: 46px;
+            }
+            & .mdc-select__dropdown-icon{
+                top:10px;
+            }
+        }
+
+
+
+    }
+
+    &__content{
+        position: relative;
+        background-color: rgba(0,0,0,0.06);
+        padding: 20px 6px;
+
+
+        .dataTables_wrapper{
+
+
+            .dataTables_scroll{
+
+
+                .dataTables_scrollHead{
+                    border-radius: 4px 4px 0px 0px;
+
+                    .dataTables_scrollHeadInner{
+
+                        width: 100% !important;
+
+                        table.dataTable{
+                            width: 100% !important;
+
+                            thead{
+                                border-radius: 4px 4px 0px 0px;
+                                background-color:$secondary-color;
+                                width: 100% !important;
+                                color: white;
+                                font-weight: 400 !important;
+                                border: none;
+
+                                tr{
+                                    width: 100% !important;
+
+                                    
+                                    th{
+                                        font-weight: 500;
+                                        padding-left: 8px;
+                                        border:none;
+
+                                        &:not(:last-child){
+                                            border-right: 1px solid rgba(0,0,0,0.12);
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+
+
+                .dataTables_scrollBody{
+             
+
+       
+
+                        table.dataTable{
+                            width: 100% !important;
+
+                            tbody{
+                                width: 100% !important;
+                                font-weight: 400 !important;
+                                border: none;
+
+                                tr{
+                                    width: 100% !important;
+                                    color: rgba(0,0,0,0.7);
+                                    
+                                    &:hover{
+                                        color: black;
+                                        cursor: pointer;
+                                    }
+                                    td{
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        text-align: center;
+                                        background-color: white;
+                                    }
+                                }
+                            }
+
+                        }
+
+                    
+
+                }
+
+
+            }
+
+
+        }
+
+
+
+        .dataTables_scrollBody{
+            border-bottom: none !important;
+        }
+
+    }
+
+
+}
+
+
+
+
+
 .form__pages{
     padding: 10px 10px 10px 10px;
 
@@ -11,3 +172,5 @@
       }
 
 }
+
+

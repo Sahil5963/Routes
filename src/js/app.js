@@ -11,6 +11,21 @@ import {MDCRadio} from '@material/radio';
 
 
 
+var $ = require('jquery');
+var dt = require("datatables.net")(window, $);
+var buttons = require( 'datatables.net-buttons' )( window, $ );
+
+
+const iconButtonRipple = [].map.call(document.querySelectorAll('.mdc-icon-button'), function (el) {
+  return new MDCRipple(el)
+});
+
+iconButtonRipple.forEach(iconButtonRipple => {
+  iconButtonRipple.unbounded = true;
+})
+
+
+
 const radio = [].map.call(document.querySelectorAll('.mdc-radio'), function (el) {
   return new MDCRadio(el);
 });
@@ -21,13 +36,10 @@ const notchedOutlines = [].map.call(document.querySelectorAll('.mdc-notched-outl
 });
 
 
-const selectField = [].map.call(document.querySelectorAll('.mdc-select'), function (el) {
+const selectFields = [].map.call(document.querySelectorAll('.mdc-select'), function (el) {
   return new MDCSelect(el);
 });
 
-// selectField.listen('MDCSelect:change', () => {
-//   alert(`Selected option at index ${select.selectedIndex} with value "${select.value}"`);
-// });
 
 const lists = [].map.call(document.querySelectorAll('.mdc-list'), function (el) {
   return new MDCList(el);
@@ -55,8 +67,10 @@ const sidebar = document.getElementById("sidebar");
 
 toggleMenu.addEventListener("click", () => {
   if (sidebar.classList.contains("sidebar--expanded")) {
+    
     sidebar.classList.remove("sidebar--expanded");
     sidebar.classList.add("sidebar--shrinked");
+    
   } else if (sidebar.classList.contains("sidebar--shrinked")) {
     sidebar.classList.remove("sidebar--shrinked");
     sidebar.classList.add("sidebar--expanded");
@@ -152,4 +166,34 @@ sidebarDropdown.forEach((dropDown) => {
 });
 
 
+// $(document).ready(function() {
+//   $('#example').DataTable();
+// } );
 
+
+const table = $('#table').DataTable({
+  "dom": '<"top"ipB>rt<"bottom"ip>',
+  
+  responsive:true,
+  "scrollX": true,
+  buttons: [
+    'copy', 'excel', 'pdf'
+]
+});
+
+$('#search-table').on( 'keyup', function () {
+    table.search( this.value ).draw();
+});
+
+
+
+
+
+const tableEntries = document.getElementById('table-entries');
+
+table.page.len(tableEntries.value).draw();
+
+tableEntries.addEventListener('change', () => {
+
+  table.page.len(tableEntries.value).draw();
+})

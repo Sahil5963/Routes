@@ -3,6 +3,7 @@ require("../login.html");
 require("../sighnup.html");
 require("../index.html");
 require("../train_profile.html");
+require("../add_train_profile.html");
 
 
 
