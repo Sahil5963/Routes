@@ -1,5 +1,7 @@
 @import '../variables';
-
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/chips/mdc-chips";
+@import "@material/button/mdc-button";
 .table-page{
     padding: 0px;
 
@@ -8,7 +10,7 @@
         box-shadow: 0px 1px 2px rgba(0,0,0,0.14);
 
         & .add-button{
-            height: 48px !important;
+            min-height: 48px !important;
             align-content: center;
             padding-left: 4px;
             padding-right: 20px;
@@ -52,7 +54,8 @@
     &__content{
         position: relative;
         background-color: rgba(0,0,0,0.06);
-        padding: 20px 6px;
+        padding: 10px 6px 40px 6px;
+        overflow: auto;
 
 
         .dataTables_wrapper{
@@ -65,33 +68,39 @@
                     border-radius: 4px 4px 0px 0px;
 
                     .dataTables_scrollHeadInner{
-
-                        width: 100% !important;
+                        width: inherit !important;
+                      
 
                         table.dataTable{
-                            width: 100% !important;
+                            
 
                             thead{
                                 border-radius: 4px 4px 0px 0px;
                                 background-color:$secondary-color;
-                                width: 100% !important;
+                             
                                 color: white;
                                 font-weight: 400 !important;
                                 border: none;
+                                
 
                                 tr{
-                                    width: 100% !important;
+                                
 
                                     
                                     th{
                                         font-weight: 500;
                                         padding-left: 8px;
+                                        font-size: 14px;
                                         border:none;
 
                                         &:not(:last-child){
-                                            border-right: 1px solid rgba(0,0,0,0.12);
+                                            border-right: 1px solid rgba(#ffffff,0.17);
                                         }
                                     }
+
+
+
+
                                 }
                             }
 
@@ -108,15 +117,15 @@
        
 
                         table.dataTable{
-                            width: 100% !important;
+        
 
                             tbody{
-                                width: 100% !important;
+                      
                                 font-weight: 400 !important;
                                 border: none;
 
                                 tr{
-                                    width: 100% !important;
+                                 
                                     color: rgba(0,0,0,0.7);
                                     
                                     &:hover{
@@ -124,8 +133,8 @@
                                         cursor: pointer;
                                     }
                                     td{
-                                        font-weight: 400;
-                                        font-size: 14px;
+                                        font-weight: 600;
+                                        font-size: 13px;
                                         text-align: center;
                                         background-color: white;
                                     }
@@ -146,9 +155,177 @@
 
 
 
-        .dataTables_scrollBody{
-            border-bottom: none !important;
+        table.dataTable{
+
+            border: none !important;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+            
+
+            thead{
+                border-radius: 4px 4px 0px 0px !important;
+                background-color:$secondary-color;
+             
+                color: white;
+                font-weight: 400 !important;
+                border: none;
+                
+
+                tr{
+                
+
+                    
+                    th{
+                        font-weight: 500;
+                        padding-left: 8px;
+                        font-size: 14px;
+                        border:none;
+
+                        &:not(:last-child){
+                            border-right: 1px solid rgba(#ffffff,0.17);
+                        }
+
+                        &:first-child {
+                            border-top-left-radius: 6px;
+                        }
+                        &:last-child {
+                            border-top-right-radius: 6px;
+                        }
+                    }
+
+
+
+
+                }
+            }
+        
+
+            tbody{
+      
+                font-weight: 400 !important;
+                border: none;
+
+                tr{
+                 
+                    color: rgba(0,0,0,0.7);
+                    
+                    &:hover{
+                        color: black;
+                    }
+                    td{
+                        font-weight: 600;
+                        font-size: 13px;
+                        text-align: center;
+                        background-color: white;
+                    }
+                }
+            }
+
+            .edit-icon{
+               @include mdc-icon-button-ink-color(#0055FF);
+            }
+
+            .delete-icon{
+                @include mdc-icon-button-ink-color(#F84444);
+            }
+
+            .active-chip{
+                @include mdc-chip-ink-color(#ffffff);
+                pointer-events: none;
+                @include mdc-chip-fill-color(#2CB10C);
+               
+            }
+
+            .mdc-button{
+
+                &.page-button--active{
+                    @include mdc-button-container-fill-color($secondary-color);
+                    @include mdc-button-ink-color($white-color);
+                }
+
+            }
+
+
+
+            .not-active-chip{
+                pointer-events: none;
+    opacity: 0.8;
+            }
+
+
+
+            
+
+            
+
         }
+
+        .top{
+            padding: 10px 60px 20px 16px;
+            text-align: center;
+            display:flex;
+            justify-content: space-between;
+
+            
+        }
+
+        .bottom{
+            display: flex;
+            padding: 20px 20px 10px 10px;
+            justify-content: space-between;
+            align-content: center;
+
+            .dataTables_paginate.paging_simple_numbers{
+                float: none !important;
+            }
+
+        }
+
+        .dataTables_info{
+            font-weight: 600;
+            padding-top: 15px !important;
+            float: none !important;
+            padding-left: 4px;
+            font-size: 13px;
+            color: #6d6d6d !important;
+            display: inline-block;
+        }
+
+        .dt-buttons{
+            float: none;
+            padding-top: 6px;
+
+
+            & .export-button{
+                @include mdc-button-container-fill-color(rgba(0,0,0,0.1));
+                @include mdc-button-ink-color($dark-color);
+            }
+
+        }
+
+
+
+
+
+        .mdc-button{
+
+            &.page-button--active{
+                @include mdc-button-container-fill-color($secondary-color);
+                @include mdc-button-ink-color($white-color);
+            }
+
+            &.page-button--disabled{
+                @include mdc-button-container-fill-color(rgba(0,0,0,0));
+                @include mdc-button-ink-color(rgba(0,0,0,0.5));
+                pointer-events: none;
+            }
+
+        }
+
+
+
+
+
+
 
     }
 

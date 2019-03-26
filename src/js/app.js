@@ -11,9 +11,15 @@ import {MDCRadio} from '@material/radio';
 
 
 
-var $ = require('jquery');
-var dt = require("datatables.net")(window, $);
-var buttons = require( 'datatables.net-buttons' )( window, $ );
+require('jquery');
+require("datatables.net");
+require( 'jszip' );
+require( 'datatables.net-buttons-dt' )();
+require( 'datatables.net-buttons/js/buttons.colVis.js' )();
+require( 'datatables.net-buttons/js/buttons.flash.js' )();
+require( 'datatables.net-buttons/js/buttons.html5.js' )();
+require('datatables.net-buttons/js/buttons.print.js')();
+
 
 
 const iconButtonRipple = [].map.call(document.querySelectorAll('.mdc-icon-button'), function (el) {
@@ -22,7 +28,8 @@ const iconButtonRipple = [].map.call(document.querySelectorAll('.mdc-icon-button
 
 iconButtonRipple.forEach(iconButtonRipple => {
   iconButtonRipple.unbounded = true;
-})
+});
+
 
 
 
@@ -169,17 +176,27 @@ sidebarDropdown.forEach((dropDown) => {
 // $(document).ready(function() {
 //   $('#example').DataTable();
 // } );
+$.fn.dataTable.ext.classes.sPageButton = 'mdc-button';
+$.fn.dataTable.ext.classes.sPageButtonActive = 'page-button--active';
+$.fn.dataTable.ext.classes.sPageButtonDisabled = 'page-button--disabled';
+$.fn.dataTable.ext.classes.sPageButtonDisabled = 'page-button--disabled';
 
 
 const table = $('#table').DataTable({
-  "dom": '<"top"ipB>rt<"bottom"ip>',
-  
-  responsive:true,
-  "scrollX": true,
+  "dom": '<"top"iB>rt<"bottom"ip>',
+  responsive: true,
   buttons: [
-    'copy', 'excel', 'pdf'
-]
+    {
+      extend: "print",
+      className: "mdc-button export-button",
+      init: function (api, node, config) {
+        $(node).removeClass('dt-button')
+      }
+    }]
+  
 });
+
+
 
 $('#search-table').on( 'keyup', function () {
     table.search( this.value ).draw();

@@ -1493,7 +1493,7 @@ var foundation_MDCFloatingLabelFoundation = /** @class */ (function (_super) {
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+/*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
  *
@@ -11816,11 +11816,10 @@ jQuery.isNumeric = function( obj ) {
 // AMD loader is present. jQuery is a special case. For more information, see
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
-if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+if ( typeof define === "function" && define.amd ) {
+	define( "jquery", [], function() {
 		return jQuery;
-	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} );
 }
 
 
@@ -11866,7 +11865,7 @@ return jQuery;
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1.10.19
+/*! DataTables 1.10.19
  * ©2008-2018 SpryMedia Ltd - datatables.net/license
  */
 
@@ -11895,12 +11894,29 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 (function( factory ) {
 	"use strict";
 
-	if ( true ) {
+	if ( typeof define === 'function' && define.amd ) {
 		// AMD
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+		define( ['jquery'], function ( $ ) {
 			return factory( $, window, document );
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} );
+	}
+	else if ( true ) {
+		// CommonJS
+		module.exports = function (root, $) {
+			if ( ! root ) {
+				// CommonJS environments without a window global must pass a
+				// root. This will give an error otherwise
+				root = window;
+			}
+
+			if ( ! $ ) {
+				$ = typeof window !== 'undefined' ? // jQuery's factory checks for a global window
+					__webpack_require__(11) :
+					__webpack_require__(11)( root );
+			}
+
+			return factory( $, root, root.document );
+		};
 	}
 	else {}
 }
@@ -28826,17 +28842,30 @@ module.exports = __webpack_require__(32);
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Buttons for DataTables 1.5.6
+/*! Buttons for DataTables 1.5.6
  * ©2016-2019 SpryMedia Ltd - datatables.net/license
  */
 
 (function( factory ){
-	if ( true ) {
+	if ( typeof define === 'function' && define.amd ) {
 		// AMD
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(11), __webpack_require__(14)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+		define( ['jquery', 'datatables.net'], function ( $ ) {
 			return factory( $, window, document );
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} );
+	}
+	else if ( true ) {
+		// CommonJS
+		module.exports = function (root, $) {
+			if ( ! root ) {
+				root = window;
+			}
+
+			if ( ! $ || ! $.fn.dataTable ) {
+				$ = __webpack_require__(14)(root, $).$;
+			}
+
+			return factory( $, root, root.document );
+		};
 	}
 	else {}
 }(function( $, window, document, undefined ) {
