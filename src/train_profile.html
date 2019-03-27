@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fleet Management - Train Profile</title>
-    <link rel="stylesheet" href="css/main.css">
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    
 
 </head>
 
@@ -35,7 +39,7 @@
 
         <ul class="sidebar__nav">
             <li class="sidebar__nav__item">
-                <a class="sidebar__nav__link mdc-ripple-surface" href="#">
+                <a class="sidebar__nav__link mdc-ripple-surface" href="index.html">
                     <i class="material-icons">home</i>Dashboard</a>
             </li>
 
@@ -160,7 +164,7 @@
         <div class="main-content mdc-top-app-bar--fixed-adjust">
           <div class="mdc-layout-grid  table-page">
             <div class="mdc-layout-grid__inner table-page__toolbar">
-              <div class="mdc-layout-grid__cell--span-3">
+              <div class="mdc-layout-grid__cell--span-12">
                   <button class="mdc-button add-button  mdc-button--raised mdc-ripple-surface">
                       <i class="material-icons mdc-button__icon" aria-hidden="true">add_circle</i>
                       <span class="mdc-button__label">Add New Train</span>
@@ -168,67 +172,8 @@
               </div>
 
 
-              <div class="mdc-layout-grid__cell--span-5">
 
-                <label class="text-bold">Enteries To Display : </label>
 
-                <!-- <div class="mdc-select ">
-                    <i class="mdc-select__dropdown-icon"></i>
-                    <select class="mdc-select__native-control"  id="table-entries">
-                      <option value="" disabled selected></option>
-                      <option value="grains" selected>
-                       10
-                      </option>
-                      <option value="vegetables">
-                        20
-                      </option>
-                      <option value="fruit">
-                        100
-                      </option>
-                    </select>
-                    <div class="mdc-line-ripple"></div>
-                  </div> -->
-
-                  <div class="mdc-select demo-width-class  mdc-select--outlined mdc-select--dense">
-                      <i class="mdc-select__dropdown-icon"></i>
-                      <select class="mdc-select__native-control" id="table-entries">
-                          <option value="10" selected>
-                           10
-                          </option>
-                          <option value="20">
-                           20
-                          </option>
-                          <option value="20">
-                              14
-                             </option>
-                          <option value="100">
-                            100
-                          </option>
-                        </select>
-                      
-                      <div class="mdc-notched-outline">
-                              <div class="mdc-notched-outline__leading"></div>
-                              <div class="mdc-notched-outline__notch">
-                                  
-                              </div>
-                              <div class="mdc-notched-outline__trailing"></div>
-                            </div>
-                    </div>
-              </div>
-
-              <div class="mdc-layout-grid__cell--span-4">
-                  <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width mdc-text-field--dense">
-                      <input type="text" id="search-table" class="mdc-text-field__input">
-                      <div class="mdc-notched-outline">
-                        <div class="mdc-notched-outline__leading"></div>
-                        <div class="mdc-notched-outline__notch">
-                          <label for="search-table" class="mdc-floating-label">Search Table</label>
-                        </div>
-                        <div class="mdc-notched-outline__trailing"></div>
-                      </div>
-                    </div>
-
-              </div>
 
  
         
@@ -241,7 +186,7 @@
 
                   <div class="mdc-layout-grid__cell--span-12">
                       
-                  <table id="table" class="row-border " style="width:100%">
+                  <table id="table" class="row-border ui table" style="width:100%">
                       <thead>
                           <tr>
                               <th>SN</th>
@@ -684,8 +629,30 @@
 
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+
 
     <script src="js/app.js"></script>
+    <script>
+    $(document).ready(function () {
+  const table = $('#table').DataTable({
+    "dom": '<"top"iBf>rt<"bottom"ilp>',
+    responsive: true,
+    buttons: ['copy', 'excel', 'pdf', 'colvis',]
+  
+  });
+});
+    </script>
     
 
 

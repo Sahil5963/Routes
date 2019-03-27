@@ -13,7 +13,8 @@ module.exports = {
   context: path.resolve(__dirname, "../src"),
   entry: {
     main: ["./js/index.js"],
-    app: ["./js/app.js"]
+    app: ["./js/app.js"],
+    dataTable: ["./js/dataTable.js"]
   },
   mode: "production",
   output: {
@@ -64,7 +65,8 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: "css-loader"
+            loader: "css-loader",
+            options: { url: false }
           },
           {
             loader: "postcss-loader",

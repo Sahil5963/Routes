@@ -2,6 +2,9 @@
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/chips/mdc-chips";
 @import "@material/button/mdc-button";
+@import "../vendors/dataTable";
+
+
 .table-page{
     padding: 0px;
 
@@ -55,7 +58,6 @@
         position: relative;
         background-color: rgba(0,0,0,0.06);
         padding: 10px 6px 40px 6px;
-        overflow: auto;
 
 
         .dataTables_wrapper{
@@ -178,7 +180,14 @@
                         font-weight: 500;
                         padding-left: 8px;
                         font-size: 14px;
+                        background-color: inherit !important;
+                        color: inherit;
+                        cursor: pointer;
                         border:none;
+                        &::after{
+                            top:24px !important;
+                         
+                        }
 
                         &:not(:last-child){
                             border-right: 1px solid rgba(#ffffff,0.17);
@@ -227,6 +236,9 @@
             .delete-icon{
                 @include mdc-icon-button-ink-color(#F84444);
             }
+            .mdc-chip-set{
+                justify-content: center;
+            }
 
             .active-chip{
                 @include mdc-chip-ink-color(#ffffff);
@@ -260,7 +272,7 @@
         }
 
         .top{
-            padding: 10px 60px 20px 16px;
+            padding: 10px 14px 20px 14px;
             text-align: center;
             display:flex;
             justify-content: space-between;
@@ -276,7 +288,11 @@
 
             .dataTables_paginate.paging_simple_numbers{
                 float: none !important;
+                padding-top: 0px !important;
+                border: 1px solid rgba(0,0,0,0.2);
+                border-radius: 4px;
             }
+            
 
         }
 
@@ -292,7 +308,8 @@
 
         .dt-buttons{
             float: none;
-            padding-top: 6px;
+            padding-top: 0px;
+            
 
 
             & .export-button{
@@ -302,12 +319,50 @@
 
         }
 
+        .dataTables_filter{
+            float: none !important;
+            display: block;
+
+            label{
+                display: inline-block;
+                float: none !important;
+                height: auto;
+                font-weight: 500;
+                padding-top: 4px;
+                font-size: 14px;
+                color: #6d6d6d !important;
+
+                .ui.input{
+                    display: inline-block;
+                    float: none !important;
+                    height: auto;
+
+                    input[type="search"]{
+                        border-radius: 2px;
+                        border:1px solid #d1d1d1;
+                        padding: 8px;
+
+                        &:focus{
+                            outline: none;
+                            border:1px solid rgba($secondary-color,0.4);
+                        }
+                    }
+
+                    
+                }
+
+
+            }
+
+        }
+
 
 
 
 
         .mdc-button{
-
+            border-radius: 0px;
+            @include mdc-button-ink-color(#2a2a2a);
             &.page-button--active{
                 @include mdc-button-container-fill-color($secondary-color);
                 @include mdc-button-ink-color($white-color);
