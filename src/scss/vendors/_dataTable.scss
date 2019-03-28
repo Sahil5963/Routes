@@ -5085,7 +5085,7 @@
       Stackable
   ---------------*/
   
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1280px) {
     .ui.stackable.menu {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -6003,7 +6003,7 @@
   }
   
   /* Responsive */
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1280px) {
     .ui.table:not(.unstackable) {
       width: 100%;
     }

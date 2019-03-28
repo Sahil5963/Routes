@@ -7174,7 +7174,7 @@ const lists = [].map.call(document.querySelectorAll('.mdc-list'), function (el) 
 const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), function (el) {
   return new textfield_component["a" /* MDCTextField */](el);
 });
-const buttonRipples = [].map.call(document.querySelectorAll(".mdc-ripple-surface"), function (el) {
+const buttonRipples = [].map.call(document.querySelectorAll(".mdc-button"), function (el) {
   return new ripple_component["a" /* MDCRipple */](el);
 });
 const topAppBarElement = document.querySelector(".mdc-top-app-bar");

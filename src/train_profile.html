@@ -186,7 +186,7 @@
 
                   <div class="mdc-layout-grid__cell--span-12">
                       
-                  <table id="table" class="row-border ui table" style="width:100%">
+                  <table id="table" class="row-border ui table responsive " style="width:100%">
                       <thead>
                           <tr>
                               <th>SN</th>
@@ -648,9 +648,13 @@
   const table = $('#table').DataTable({
     "dom": '<"top"iBf>rt<"bottom"ilp>',
     responsive: true,
-    buttons: ['copy', 'excel', 'pdf', 'colvis',]
+    buttons: ['copy', 'excel', 'pdf', 'colvis',],
+    lengthChange: false,
   
   });
+
+  table.buttons().container()
+        .appendTo( $('div.eight.column:eq(0)', table.table().container()) );
 });
     </script>
     

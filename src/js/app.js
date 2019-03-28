@@ -7,7 +7,11 @@ import { MDCList } from '@material/list';
 import { MDCNotchedOutline } from '@material/notched-outline';
 
 import {MDCFormField} from '@material/form-field';
-import {MDCRadio} from '@material/radio';
+import { MDCRadio } from '@material/radio';
+import { MDCDialog } from '@material/dialog';
+import {MDCChipSet} from '@material/chips';
+
+
 
 
 
@@ -28,6 +32,9 @@ iconButtonRipple.forEach(iconButtonRipple => {
 
 
 
+const dialogs = [].map.call(document.querySelectorAll('.mdc-dialog'),function (el){
+return new MDCDialog(el);
+});
 
 const radio = [].map.call(document.querySelectorAll('.mdc-radio'), function (el) {
   return new MDCRadio(el);
@@ -56,7 +63,7 @@ const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), fun
 
 
 const buttonRipples = [].map.call(
-  document.querySelectorAll(".mdc-ripple-surface"),
+  document.querySelectorAll(".mdc-button"),
   function(el) {
     return new MDCRipple(el);
   }
@@ -167,6 +174,35 @@ sidebarDropdown.forEach((dropDown) => {
         
     });
 });
+
+
+
+
+
+// Forms Pages
+
+
+// const chips = [].map.call(document.querySelectorAll('.mdc-chip-set'), function (el) {
+//   new MDCChipSet(el);
+// });
+
+// const chipSetEl = document.getElementById('form-page-chip-add-seat-type');
+// console.log(chipSetEl);
+
+// const formPageAddSeatValue = document.getElementById('form-page-add-seat-value');
+
+
+// formPageAddSeatValue.addEventListener('input', function(event) {
+//     const chipEl = `<div class="mdc-chip" tabindex="0">
+//     <div class="mdc-chip__text">${formPageAddSeatValue.value}</div>
+//     <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>
+//   </div>`;
+    
+  
+//     chipSetEl.appendChild(chipEl);
+
+  
+// });
 
 
 

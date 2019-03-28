@@ -3,6 +3,8 @@
 @import "@material/chips/mdc-chips";
 @import "@material/button/mdc-button";
 @import "../vendors/dataTable";
+@import "@material/dialog/mdc-dialog";
+
 
 
 .table-page{
@@ -391,17 +393,92 @@
 
 
 
-.form__pages{
-    padding: 10px 10px 10px 10px;
+.form__page{
+    
+    background: rgba($secondary-color,0.12);
+
+    &__heading{
+        font-size:22px;
+        text-align: center;
+        font-weight: 700;
+        color: rgba($dark-color,0.9);
+    }
+
+
+    &__section{
+border-radius: 6px;
+padding: 26px 26px 30px 26px;
+background: $white-color;
+box-shadow: 0px 1px 24px rgba($secondary-color,0.2);
+
+    }
 
 
     &__cells{
         padding:4px 10px;
     }
 
+
+
     & .demo-width-class {
         width: 100%;
       }
+
+      .form-section-header{
+          padding-top: 26px;
+          h3{
+          padding-bottom: 0px;
+          margin-bottom: 4px;
+          }
+      }
+
+      &__buttons{
+
+        padding: 20px 0px;
+
+      }
+
+      &__button{
+        @include mdc-button-horizontal-padding(20px);
+       
+        text-align: center;
+        height: auto;
+        padding: 16px 26px;
+
+        &--submit{
+            
+           @include mdc-button-container-fill-color($secondary-color);
+           @include mdc-button-ink-color($white-color);
+        }
+
+        &--reset{
+            @include mdc-button-container-fill-color(rgba($dark-color,0.1));
+            @include mdc-button-ink-color($dark-color);
+            margin-left: 8px;
+         }
+
+         &--secondary{
+            @include mdc-button-container-fill-color(rgba($dark-color,0.2));
+            @include mdc-button-ink-color($dark-color);
+            margin-left: 2px;
+         }
+ 
+
+      }
+
+
+      .wagon-chip-set{
+
+        .wagon-chip{
+            border-radius: 2px;
+            @include mdc-chip-fill-color(rgba($primary-color-light,0.9));
+            @include mdc-chip-ink-color($white-color);
+        }
+
+      }
+
+
+
 
 }
 
