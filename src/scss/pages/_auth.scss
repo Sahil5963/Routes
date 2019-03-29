@@ -1,3 +1,16 @@
+@import "@material/textfield/mdc-text-field";
+@import "@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "@material/button/mdc-button";
+
+
+@import "@material/notched-outline/mdc-notched-outline";
+
+@import "../variables";
+
+
+
+
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus textarea:-webkit-autofill,
@@ -10,9 +23,9 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.auth-page {
+main.auth-page {
   position: relative;
-  background-color: #252a34;
+  background-color: $auth-dark-color;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -20,7 +33,7 @@ select:-webkit-autofill:focus {
 
 
 .login-container {
-  background-color: #20242d;
+  background-color: $auth-dark-color-darker;
   position: relative;
   border-radius: 10px;
   padding: 20px 80px;
@@ -173,8 +186,8 @@ select:-webkit-autofill:focus {
     .mdc-text-field {
       width: 100%;
 
-      @include mdc-text-field-focused-outline-color($primary-color-light);
-      @include mdc-text-field-label-color($primary-color-light);
+      @include mdc-text-field-focused-outline-color($auth-primary-color);
+      @include mdc-text-field-label-color($auth-primary-color);
       @include mdc-text-field-ink-color(white);
       @include mdc-text-field-outline-color(#ababab);
       @include mdc-text-field-hover-outline-color(white);
@@ -183,7 +196,7 @@ select:-webkit-autofill:focus {
     }
 
     a.form-link {
-      color: $primary-color-light1;
+      color: $auth-primary-color-light;
       font-size: 14px;
       padding: 20px 0px 20px 0px;
       display: inline-block;
@@ -192,16 +205,16 @@ select:-webkit-autofill:focus {
     }
 
     .form-link:hover {
-      color: $primary-color-light;
+      color: $auth-primary-color;
     }
 
     .mdc-button {
       padding: 20px 50px 20px 50px;
       height: auto;
       font-size: 14px;
-      @include mdc-button-container-fill-color($primary-color);
+      @include mdc-button-container-fill-color($auth-primary-color);
       @include mdc-button-shape-radius(40px);
-      @include mdc-button-ink-color($primary-color);
+      @include mdc-button-ink-color(white);
       @include mdc-states-hover-opacity(0.03);
       @include mdc-states-focus-opacity(0.2);
       @include mdc-states-press-opacity(0.3);
@@ -313,7 +326,7 @@ select:-webkit-autofill:focus {
         font-size: 14px;
         text-align: center;
         @include mdc-button-container-fill-color(transparent);
-        @include mdc-button-ink-color($primary-color);
+        @include mdc-button-ink-color($auth-primary-color);
         @include mdc-states-base-color(white);
       }
     }
@@ -321,3 +334,5 @@ select:-webkit-autofill:focus {
 }
 
 }
+
+

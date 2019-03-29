@@ -26,9 +26,9 @@ $mdc-theme-on-secondary: #ffffff;
 
 @import 'layout';
 @import 'typography';
-@import 'pages/basic';
 @import 'pages/auth';
 @import 'utilities';
+@import 'pages/basic';
 
 html,
 body {

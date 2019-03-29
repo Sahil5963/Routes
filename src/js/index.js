@@ -4,6 +4,10 @@ require("../sighnup.html");
 require("../index.html");
 require("../train_profile.html");
 require("../add_train_profile.html");
+require("../coach_profile.html");
+require("../add_coach_profile.html");
+require("../wagon_carrier_profile.html");
+require("../add_wagon_carrier_profile.html");
 
 
 

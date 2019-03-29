@@ -9,7 +9,7 @@ import { MDCNotchedOutline } from '@material/notched-outline';
 import {MDCFormField} from '@material/form-field';
 import { MDCRadio } from '@material/radio';
 import { MDCDialog } from '@material/dialog';
-import {MDCChipSet} from '@material/chips';
+import { MDCChipSet } from '@material/chips';
 
 
 
@@ -70,7 +70,9 @@ const buttonRipples = [].map.call(
 );
 
 const topAppBarElement = document.querySelector(".mdc-top-app-bar");
-const topAppBar = new MDCTopAppBar(topAppBarElement);
+if (topAppBarElement) {
+  const topAppBar = new MDCTopAppBar(topAppBarElement);
+}
 
 const toggleMenu = document.getElementById("toggle-menu");
 const sidebar = document.getElementById("sidebar");
@@ -189,20 +191,68 @@ sidebarDropdown.forEach((dropDown) => {
 // const chipSetEl = document.getElementById('form-page-chip-add-seat-type');
 // console.log(chipSetEl);
 
-// const formPageAddSeatValue = document.getElementById('form-page-add-seat-value');
+const formPageAddSeatValue = document.getElementById('form-page-add-seat-value');
+const formPageAddSeatBtn = document.getElementById('form-page-add-seat-btn');
 
 
-// formPageAddSeatValue.addEventListener('input', function(event) {
-//     const chipEl = `<div class="mdc-chip" tabindex="0">
-//     <div class="mdc-chip__text">${formPageAddSeatValue.value}</div>
-//     <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>
-//   </div>`;
-    
-  
+
+// formPageAddSeatValue.addEventListener('keydown', function(event) {
+//   if (event.key === 'Enter' || event.keyCode === 13) {
+//     const chipEl = document.createElement('div');
+//     // ... perform operations to properly populate/decorate chip element ...
 //     chipSetEl.appendChild(chipEl);
-
-  
+//     chipSet.addChip(chipEl);
+//   }
 // });
 
 
 
+const chipSetEl = document.querySelector('.mdc-chip-set');
+if (chipSetEl) {
+  const chipSet = new MDCChipSet(chipSetEl);
+
+  if(formPageAddSeatValue && formPageAddSeatBtn){
+  formPageAddSeatBtn.addEventListener('click', function (event) {
+
+      event.preventDefault();
+      const chipEl = document.createElement('div');
+      chipEl.classList.add('mdc-chip', 'add-seat-type-chip');
+      chipEl.innerHTML = `<div class="mdc-chip__text">${formPageAddSeatValue.value}</div>
+    <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>`;
+    
+      chipSetEl.appendChild(chipEl);
+    chipSet.addChip(chipEl);
+    
+    formPageAddSeatValue.value = "";
+  });
+
+}
+
+  chipSet.listen('MDCChip:removal', function (event) {
+    chipSetEl.removeChild(event.detail.root);
+  });
+}
+
+// Add Seat Type Chip Dialog
+
+const initialiseDialog = (dialogEl) => {
+  if (dialogEl) {
+    return new MDCDialog(dialogEl);
+  }
+}
+
+
+const addSeatTypeDialogEl = document.querySelector('.mdc-dialog')
+const addSeatTypeDialog = initialiseDialog(addSeatTypeDialogEl);
+
+
+  
+
+const addSeatTypeBtn = document.getElementById('add-seat-type-btn');
+
+if (addSeatTypeBtn) {
+  addSeatTypeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addSeatTypeDialog.open();
+  })
+}

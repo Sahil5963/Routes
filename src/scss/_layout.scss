@@ -1,10 +1,16 @@
+main.auth-page{
+  margin-left: 0px;
+  position: static;
+  overflow: auto;
+}
 
 main {
     transition: all 0.2s;
   margin-left: 260px;
-  position: relative !important;
+  position: relative;
   overflow: hidden;
   }
+
   header.mdc-top-app-bar {
     transition: all 0.2s;
     width: calc(100vw - 260px);

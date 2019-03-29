@@ -299,14 +299,51 @@
                                   </div>
 
                                   <div class="mdc-layout-grid__cell--span-6 form__pages__cells">
-                                      <label class="heading4 text-black-normal text-bold">Assign Seat Types :</label>
-                                      <div class="mdc-chip-set" id="form-page-chip-add-seat-type">
-                                          <div class="mdc-chip mdc-chip-set--input" tabindex="0">
+                                      <label class="heading4 text-black-normal text-bold">Assign Seat Types : <button class="mdc-button" id="add-seat-type-btn">Add More Seats</button></label>
+                                      <div class="mdc-chip-set mdc-chip-set--input  mdc-chip-set--choice" id="form-page-chip-set-add-seat-type">
+                                          <div class="mdc-chip add-seat-type-chip" tabindex="0">
                                             <div class="mdc-chip__text">Chip content</div>
                                             <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>
                                           </div>
                                           
                                         </div>
+                                        <div class="mdc-dialog"
+                                            role="alertdialog"
+                                            aria-modal="true"
+                                            aria-labelledby="my-dialog-title"
+                                            aria-describedby="my-dialog-content">
+                                          <div class="mdc-dialog__container">
+                                            <div class="mdc-dialog__surface px-10 py-10">
+                                              <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                                              <h2 class="mdc-dialog__title heading4 py-4" id="my-dialog-title"><!--
+                                            -->Add New Seat Type<!--
+                                          --></h2>
+                                              <div class="mdc-dialog__content py-2" id="my-dialog-content">
+                                                <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--full-width">
+                                                  <input type="text" class="mdc-text-field__input" id="form-page-add-seat-value">
+                                                  <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                      <label for="form-page-add-seat-value" class="mdc-floating-label">Enter Seat Name</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <footer class="mdc-dialog__actions px-20">
+                                                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
+                                                  <span class="mdc-button__label">Close</span>
+                                                </button>
+                                                <button type="button" id="form-page-add-seat-btn" class="mdc-button mdc-dialog__button mdc-button--raised" data-mdc-dialog-action="yes">
+                                                  <span class="mdc-button__label">Add</span>
+                                                </button>
+                                              </footer>
+                                            </div>
+                                          </div>
+                                          <div class="mdc-dialog__scrim"></div>
+                                        </div>
+
+                                        
                                   </div>
 
 
@@ -335,7 +372,7 @@
                                               <div class="mdc-radio__inner-circle"></div>
                                             </div>
                                           </div>
-                                          <label for="logic">Active</label>
+                                          <label for="active">Active</label>
                                           <div class="mdc-radio">
                                               <input class="mdc-radio__native-control" type="radio" id="inactive" name="status" checked>
                                               <div class="mdc-radio__background">
@@ -343,7 +380,7 @@
                                                 <div class="mdc-radio__inner-circle"></div>
                                               </div>
                                             </div>
-                                            <label for="logic">Inactive</label>
+                                            <label for="inactive">Inactive</label>
 
                                         </div>
                           </div>

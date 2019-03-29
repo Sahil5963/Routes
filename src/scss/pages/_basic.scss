@@ -440,7 +440,6 @@ box-shadow: 0px 1px 24px rgba($secondary-color,0.2);
 
       &__button{
         @include mdc-button-horizontal-padding(20px);
-       
         text-align: center;
         height: auto;
         padding: 16px 26px;
