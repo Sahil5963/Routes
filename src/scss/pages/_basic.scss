@@ -1,20 +1,19 @@
-@import '../variables';
+@import "../variables";
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/chips/mdc-chips";
 @import "@material/button/mdc-button";
 @import "../vendors/dataTable";
 @import "@material/dialog/mdc-dialog";
+@import "@material/snackbar/mdc-snackbar";
 
-
-
-.table-page{
+.table-page {
     padding: 0px;
 
-    &__toolbar{
+    &__toolbar {
         padding: 30px 20px 30px 20px;
-        box-shadow: 0px 1px 2px rgba(0,0,0,0.14);
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
 
-        & .add-button{
+        & .add-button {
             min-height: 48px !important;
             align-content: center;
             padding-left: 4px;
@@ -33,196 +32,146 @@
             @include mdc-states-focus-opacity(0.16);
             @include mdc-states-press-opacity(0.2);
 
-            & .material-icons{
+            & .material-icons {
                 font-size: 40px;
                 width: auto;
                 margin-left: 0px;
-                height:auto;
+                height: auto;
             }
         }
 
-        & .mdc-select{
+        & .mdc-select {
             height: 46px;
 
-            & .mdc-select__native-control{
+            & .mdc-select__native-control {
                 height: 46px;
             }
-            & .mdc-select__dropdown-icon{
-                top:10px;
+
+            & .mdc-select__dropdown-icon {
+                top: 10px;
             }
         }
-
-
-
     }
 
-    &__content{
+    &__content {
         position: relative;
-        background-color: rgba(0,0,0,0.06);
+        background-color: rgba($primary-color-light, 0.14);
         padding: 10px 6px 40px 6px;
 
-
-        .dataTables_wrapper{
-
-
-            .dataTables_scroll{
-
-
-                .dataTables_scrollHead{
+        .dataTables_wrapper {
+            .dataTables_scroll {
+                .dataTables_scrollHead {
                     border-radius: 4px 4px 0px 0px;
 
-                    .dataTables_scrollHeadInner{
+                    .dataTables_scrollHeadInner {
                         width: inherit !important;
-                      
 
-                        table.dataTable{
-                            
-
-                            thead{
+                        table.dataTable {
+                            thead {
                                 border-radius: 4px 4px 0px 0px;
-                                background-color:$secondary-color;
-                             
+                                background-color: $primary-color-light;
+
                                 color: white;
                                 font-weight: 400 !important;
                                 border: none;
-                                
 
-                                tr{
-                                
-
-                                    
-                                    th{
+                                tr {
+                                    th {
                                         font-weight: 500;
                                         padding-left: 8px;
                                         font-size: 14px;
-                                        border:none;
+                                        border: none;
 
-                                        &:not(:last-child){
-                                            border-right: 1px solid rgba(#ffffff,0.17);
+                                        &:not(:last-child) {
+                                            border-right: 1px solid rgba(#ffffff, 0.17);
                                         }
                                     }
-
-
-
-
                                 }
                             }
-
                         }
-
                     }
-
                 }
 
+                .dataTables_scrollBody {
+                    table.dataTable {
+                        tbody {
+                            font-weight: 400 !important;
+                            border: none;
 
-                .dataTables_scrollBody{
-             
+                            tr {
+                                color: rgba(0, 0, 0, 0.7);
 
-       
+                                &:hover {
+                                    color: black;
+                                    cursor: pointer;
+                                }
 
-                        table.dataTable{
-        
-
-                            tbody{
-                      
-                                font-weight: 400 !important;
-                                border: none;
-
-                                tr{
-                                 
-                                    color: rgba(0,0,0,0.7);
-                                    
-                                    &:hover{
-                                        color: black;
-                                        cursor: pointer;
-                                    }
-                                    td{
-                                        font-weight: 600;
-                                        font-size: 13px;
-                                        text-align: center;
-                                        background-color: white;
-                                    }
+                                td {
+                                    font-weight: 600;
+                                    font-size: 13px;
+                                    text-align: center;
+                                    background-color: white;
                                 }
                             }
-
                         }
-
-                    
-
+                    }
                 }
-
-
             }
-
-
         }
 
-
-
-        table.dataTable{
-
+        table.dataTable {
             border: none !important;
-            box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
-            
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 
-            thead{
+            thead {
                 border-radius: 4px 4px 0px 0px !important;
-                background-color:$secondary-color;
-             
+                background-color: $primary-color-light;
+
                 color: white;
                 font-weight: 400 !important;
                 border: none;
-                
 
-                tr{
-                
-
-                    
-                    th{
+                tr {
+                    th {
                         font-weight: 500;
                         padding-left: 8px;
                         font-size: 14px;
                         background-color: inherit !important;
                         color: inherit;
                         cursor: pointer;
-                        border:none;
-                        &::after{
-                            top:24px !important;
-                         
+                        border: none;
+
+                        &::after {
+                            top: 24px !important;
                         }
 
-                        &:not(:last-child){
-                            border-right: 1px solid rgba(#ffffff,0.17);
+                        &:not(:last-child) {
+                            border-right: 1px solid rgba(#ffffff, 0.17);
                         }
 
                         &:first-child {
                             border-top-left-radius: 6px;
                         }
+
                         &:last-child {
                             border-top-right-radius: 6px;
                         }
                     }
-
-
-
-
                 }
             }
-        
 
-            tbody{
-      
+            tbody {
                 font-weight: 400 !important;
                 border: none;
 
-                tr{
-                 
-                    color: rgba(0,0,0,0.7);
-                    
-                    &:hover{
+                tr {
+                    color: rgba(0, 0, 0, 0.7);
+
+                    &:hover {
                         color: black;
                     }
-                    td{
+
+                    td {
                         font-weight: 600;
                         font-size: 13px;
                         text-align: center;
@@ -231,74 +180,59 @@
                 }
             }
 
-            .edit-icon{
-               @include mdc-icon-button-ink-color(#0055FF);
+            .edit-icon {
+                @include mdc-icon-button-ink-color(#0055ff);
             }
 
-            .delete-icon{
-                @include mdc-icon-button-ink-color(#F84444);
+            .delete-icon {
+                @include mdc-icon-button-ink-color(#f84444);
             }
-            .mdc-chip-set{
+
+            .mdc-chip-set {
                 justify-content: center;
             }
 
-            .active-chip{
+            .active-chip {
                 @include mdc-chip-ink-color(#ffffff);
                 pointer-events: none;
-                @include mdc-chip-fill-color(#2CB10C);
-               
+                @include mdc-chip-fill-color(#2cb10c);
             }
 
-            .mdc-button{
-
-                &.page-button--active{
+            .mdc-button {
+                &.page-button--active {
                     @include mdc-button-container-fill-color($secondary-color);
                     @include mdc-button-ink-color($white-color);
                 }
-
             }
 
-
-
-            .not-active-chip{
+            .not-active-chip {
                 pointer-events: none;
-    opacity: 0.8;
+                opacity: 0.8;
             }
-
-
-
-            
-
-            
-
         }
 
-        .top{
+        .top {
             padding: 10px 14px 20px 14px;
             text-align: center;
-            display:flex;
+            display: flex;
             justify-content: space-between;
-
-            
         }
 
-        .bottom{
+        .bottom {
             display: flex;
             padding: 20px 20px 10px 10px;
             justify-content: space-between;
             align-content: center;
 
-            .dataTables_paginate.paging_simple_numbers{
+            .dataTables_paginate.paging_simple_numbers {
                 float: none !important;
                 padding-top: 0px !important;
-                border: 1px solid rgba(0,0,0,0.2);
+                border: 1px solid rgba(0, 0, 0, 0.2);
                 border-radius: 4px;
             }
-            
-
         }
 
-        .dataTables_info{
+        .dataTables_info {
             font-weight: 600;
             padding-top: 15px !important;
             float: none !important;
@@ -308,24 +242,21 @@
             display: inline-block;
         }
 
-        .dt-buttons{
+        .dt-buttons {
             float: none;
             padding-top: 0px;
-            
 
-
-            & .export-button{
-                @include mdc-button-container-fill-color(rgba(0,0,0,0.1));
+            & .export-button {
+                @include mdc-button-container-fill-color(rgba(0, 0, 0, 0.1));
                 @include mdc-button-ink-color($dark-color);
             }
-
         }
 
-        .dataTables_filter{
+        .dataTables_filter {
             float: none !important;
             display: block;
 
-            label{
+            label {
                 display: inline-block;
                 float: none !important;
                 height: auto;
@@ -334,151 +265,144 @@
                 font-size: 14px;
                 color: #6d6d6d !important;
 
-                .ui.input{
+                .ui.input {
                     display: inline-block;
                     float: none !important;
                     height: auto;
 
-                    input[type="search"]{
+                    input[type="search"] {
                         border-radius: 2px;
-                        border:1px solid #d1d1d1;
+                        border: 1px solid #d1d1d1;
                         padding: 8px;
 
-                        &:focus{
+                        &:focus {
                             outline: none;
-                            border:1px solid rgba($secondary-color,0.4);
+                            border: 1px solid rgba($secondary-color, 0.4);
                         }
                     }
-
-                    
                 }
-
-
             }
-
         }
 
-
-
-
-
-        .mdc-button{
+        .mdc-button {
             border-radius: 0px;
             @include mdc-button-ink-color(#2a2a2a);
-            &.page-button--active{
+
+            &.page-button--active {
                 @include mdc-button-container-fill-color($secondary-color);
                 @include mdc-button-ink-color($white-color);
             }
 
-            &.page-button--disabled{
-                @include mdc-button-container-fill-color(rgba(0,0,0,0));
-                @include mdc-button-ink-color(rgba(0,0,0,0.5));
+            &.page-button--disabled {
+                @include mdc-button-container-fill-color(rgba(0, 0, 0, 0));
+                @include mdc-button-ink-color(rgba(0, 0, 0, 0.5));
                 pointer-events: none;
             }
-
         }
-
-
-
-
-
-
-
     }
-
-
 }
 
+.form__page {
+    background: rgba($secondary-color, 0.12);
 
-
-
-
-.form__page{
-    
-    background: rgba($secondary-color,0.12);
-
-    &__heading{
-        font-size:22px;
+    &__heading {
+        font-size: 22px;
         text-align: center;
         font-weight: 700;
-        color: rgba($dark-color,0.9);
+        color: rgba($dark-color, 0.9);
     }
 
-
-    &__section{
-border-radius: 6px;
-padding: 26px 26px 30px 26px;
-background: $white-color;
-box-shadow: 0px 1px 24px rgba($secondary-color,0.2);
-
+    &__section {
+        border-radius: 6px;
+        padding: 26px 26px 30px 26px;
+        background: $white-color;
+        box-shadow: 0px 1px 24px rgba($secondary-color, 0.2);
     }
 
-
-    &__cells{
-        padding:4px 10px;
+    &__cells {
+        padding: 4px 10px;
     }
-
-
 
     & .demo-width-class {
         width: 100%;
-      }
+    }
 
-      .form-section-header{
-          padding-top: 26px;
-          h3{
-          padding-bottom: 0px;
-          margin-bottom: 4px;
-          }
-      }
+    .form-section-header {
+        padding-top: 26px;
 
-      &__buttons{
+        h3 {
+            padding-bottom: 0px;
+            margin-bottom: 4px;
+        }
+    }
 
+    &__buttons {
         padding: 20px 0px;
+    }
 
-      }
-
-      &__button{
+    &__button {
         @include mdc-button-horizontal-padding(20px);
         text-align: center;
         height: auto;
         padding: 16px 26px;
 
-        &--submit{
-            
-           @include mdc-button-container-fill-color($secondary-color);
-           @include mdc-button-ink-color($white-color);
+        &--submit {
+            @include mdc-button-container-fill-color($secondary-color);
+            @include mdc-button-ink-color($white-color);
         }
 
-        &--reset{
-            @include mdc-button-container-fill-color(rgba($dark-color,0.1));
+        &--reset {
+            @include mdc-button-container-fill-color(rgba($dark-color, 0.1));
             @include mdc-button-ink-color($dark-color);
             margin-left: 8px;
-         }
-
-         &--secondary{
-            @include mdc-button-container-fill-color(rgba($dark-color,0.2));
-            @include mdc-button-ink-color($dark-color);
-            margin-left: 2px;
-         }
- 
-
-      }
-
-
-      .wagon-chip-set{
-
-        .wagon-chip{
-            border-radius: 2px;
-            @include mdc-chip-fill-color(rgba($primary-color-light,0.9));
-            @include mdc-chip-ink-color($white-color);
         }
 
-      }
+        &--secondary {
+            @include mdc-button-container-fill-color(rgba($dark-color, 0.2));
+            @include mdc-button-ink-color($dark-color);
+            margin-left: 2px;
+        }
+    }
 
+    .wagon-chip-set {
+        .wagon-chip {
+            border-radius: 2px;
+            @include mdc-chip-fill-color(rgba($primary-color-light, 0.9));
+            @include mdc-chip-ink-color($white-color);
+        }
+    }
 
+    .custom-sanckbar {
 
+        &--success {
+            @include mdc-snackbar-fill-color($green-color);
+        }
 
+        &--fail {
+            @include mdc-snackbar-fill-color($red-color);
+        }
+
+        &__surface {
+            width: 50%;
+            padding: 16px;
+            margin-top: 10px;
+        }
+
+        &__icon {
+            height: 60px;
+            flex: 0 0 60px;
+        }
+
+        &__label {
+            font-family: inherit;
+            font-size: 20px;
+            margin-left: 8px;
+        }
+
+        &__actions {}
+
+        &__dismiss {
+            font-size: 20px;
+        }
+    }
 }
-
-

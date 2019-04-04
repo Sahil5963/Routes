@@ -28,6 +28,7 @@
     "@material/radio": "^1.0.1",
     "@material/ripple": "^1.0.1",
     "@material/select": "^1.0.1",
+    "@material/snackbar": "^1.1.0",
     "@material/textfield": "^1.0.1",
     "@material/theme": "^1.0.0",
     "@material/toolbar": "^1.0.1",

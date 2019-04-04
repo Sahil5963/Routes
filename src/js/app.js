@@ -1,15 +1,39 @@
-import { MDCTopAppBar } from "@material/top-app-bar/index";
-import { MDCRipple } from "@material/ripple";
-import { MDCTextField } from '@material/textfield';
-import { MDCSelect } from '@material/select';
+import {
+  MDCTopAppBar
+} from "@material/top-app-bar/index";
+import {
+  MDCRipple
+} from "@material/ripple";
+import {
+  MDCTextField
+} from '@material/textfield';
+import {
+  MDCSelect
+} from '@material/select';
 
-import { MDCList } from '@material/list';
-import { MDCNotchedOutline } from '@material/notched-outline';
+import {
+  MDCList
+} from '@material/list';
+import {
+  MDCNotchedOutline
+} from '@material/notched-outline';
 
-import {MDCFormField} from '@material/form-field';
-import { MDCRadio } from '@material/radio';
-import { MDCDialog } from '@material/dialog';
-import { MDCChipSet } from '@material/chips';
+import {
+  MDCFormField
+} from '@material/form-field';
+import {
+  MDCRadio
+} from '@material/radio';
+import {
+  MDCDialog
+} from '@material/dialog';
+import {
+  MDCChipSet
+} from '@material/chips';
+import {
+  MDCSnackbar
+} from '@material/snackbar';
+
 
 
 
@@ -32,8 +56,8 @@ iconButtonRipple.forEach(iconButtonRipple => {
 
 
 
-const dialogs = [].map.call(document.querySelectorAll('.mdc-dialog'),function (el){
-return new MDCDialog(el);
+const dialogs = [].map.call(document.querySelectorAll('.mdc-dialog'), function (el) {
+  return new MDCDialog(el);
 });
 
 const radio = [].map.call(document.querySelectorAll('.mdc-radio'), function (el) {
@@ -56,15 +80,17 @@ const lists = [].map.call(document.querySelectorAll('.mdc-list'), function (el) 
 });
 
 
-const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), function(el) {
-    return new MDCTextField(el);
-  });
+const textFields = [].map.call(document.querySelectorAll('.mdc-text-field'), function (el) {
+  return new MDCTextField(el);
+});
+
+
 
 
 
 const buttonRipples = [].map.call(
   document.querySelectorAll(".mdc-button"),
-  function(el) {
+  function (el) {
     return new MDCRipple(el);
   }
 );
@@ -79,10 +105,10 @@ const sidebar = document.getElementById("sidebar");
 
 toggleMenu.addEventListener("click", () => {
   if (sidebar.classList.contains("sidebar--expanded")) {
-    
+
     sidebar.classList.remove("sidebar--expanded");
     sidebar.classList.add("sidebar--shrinked");
-    
+
   } else if (sidebar.classList.contains("sidebar--shrinked")) {
     sidebar.classList.remove("sidebar--shrinked");
     sidebar.classList.add("sidebar--expanded");
@@ -112,13 +138,13 @@ function collapseSection(element) {
   // on the next frame (as soon as the previous style change has taken effect),
   // explicitly set the element's height to its current pixel height, so we
   // aren't transitioning out of 'auto'
-  requestAnimationFrame(function() {
+  requestAnimationFrame(function () {
     element.style.height = sectionHeight + "px";
     element.style.transition = elementTransition;
 
     // on the next frame (as soon as the previous style change has taken effect),
     // have the element transition to height: 0
-    requestAnimationFrame(function() {
+    requestAnimationFrame(function () {
       element.style.height = 0 + "px";
     });
   });
@@ -135,13 +161,13 @@ function expandSection(element) {
   element.style.height = sectionHeight + "px";
 
   // when the next css transition finishes (which should be the one we just triggered)
-//   element.addEventListener("transitionend", function(e) {
-//     // remove this event listener so it only gets triggered once
-//     element.removeEventListener("transitionend", arguments.callee);
+  //   element.addEventListener("transitionend", function(e) {
+  //     // remove this event listener so it only gets triggered once
+  //     element.removeEventListener("transitionend", arguments.callee);
 
-//     // remove "height" from the element's inline styles, so it can return to its initial value
-//     element.style.height = null;
-//   });
+  //     // remove "height" from the element's inline styles, so it can return to its initial value
+  //     element.style.height = null;
+  //   });
 
   // mark the section as "currently not collapsed"
   element.setAttribute("data-collapsed", "false");
@@ -153,7 +179,7 @@ sidebarDropdown.forEach((dropDown) => {
 
   let section1 = dropDown.nextElementSibling;
   let isCollapsed = section1.getAttribute("data-collapsed") === "false";
-    
+
   if (isCollapsed) {
     expandSection(section1);
     section1.setAttribute("data-collapsed", "false");
@@ -162,19 +188,19 @@ sidebarDropdown.forEach((dropDown) => {
 });
 
 sidebarDropdown.forEach((dropDown) => {
-    dropDown.addEventListener("click", () => {
+  dropDown.addEventListener("click", () => {
 
-            let section = dropDown.nextElementSibling;
-            let isCollapsed = section.getAttribute("data-collapsed") === "true";
-            if (isCollapsed) {
-                expandSection(section);
-                section.setAttribute("data-collapsed", "false");
-            } else {
-              collapseSection(section);
-              section.setAttribute("data-collapsed", "true");
-            }
-        
-    });
+    let section = dropDown.nextElementSibling;
+    let isCollapsed = section.getAttribute("data-collapsed") === "true";
+    if (isCollapsed) {
+      expandSection(section);
+      section.setAttribute("data-collapsed", "false");
+    } else {
+      collapseSection(section);
+      section.setAttribute("data-collapsed", "true");
+    }
+
+  });
 });
 
 
@@ -211,22 +237,22 @@ const chipSetEl = document.querySelector('.mdc-chip-set');
 if (chipSetEl) {
   const chipSet = new MDCChipSet(chipSetEl);
 
-  if(formPageAddSeatValue && formPageAddSeatBtn){
-  formPageAddSeatBtn.addEventListener('click', function (event) {
+  if (formPageAddSeatValue && formPageAddSeatBtn) {
+    formPageAddSeatBtn.addEventListener('click', function (event) {
 
       event.preventDefault();
       const chipEl = document.createElement('div');
       chipEl.classList.add('mdc-chip', 'add-seat-type-chip');
       chipEl.innerHTML = `<div class="mdc-chip__text">${formPageAddSeatValue.value}</div>
     <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>`;
-    
-      chipSetEl.appendChild(chipEl);
-    chipSet.addChip(chipEl);
-    
-    formPageAddSeatValue.value = "";
-  });
 
-}
+      chipSetEl.appendChild(chipEl);
+      chipSet.addChip(chipEl);
+
+      formPageAddSeatValue.value = "";
+    });
+
+  }
 
   chipSet.listen('MDCChip:removal', function (event) {
     chipSetEl.removeChild(event.detail.root);
@@ -246,7 +272,7 @@ const addSeatTypeDialogEl = document.querySelector('.mdc-dialog')
 const addSeatTypeDialog = initialiseDialog(addSeatTypeDialogEl);
 
 
-  
+
 
 const addSeatTypeBtn = document.getElementById('add-seat-type-btn');
 
@@ -256,3 +282,26 @@ if (addSeatTypeBtn) {
     addSeatTypeDialog.open();
   })
 }
+
+function initializeSnackbar(el) {
+  if (el) {
+    return new MDCSnackbar(el)
+  }
+}
+
+const formSubmitSuccessSnackbar = initializeSnackbar(document.querySelector('#form-submit-success-snackbar'));
+const formSubmitFailSnackbar = initializeSnackbar(document.querySelector('#form-submit-fail-snackbar'));
+
+
+window.setTimeout(() => {
+  console.log("I am on")
+  formSubmitSuccessSnackbar.timeoutMs = 4000;
+  formSubmitSuccessSnackbar.open();
+}, 1000);
+
+
+window.setTimeout(() => {
+  console.log("I am on")
+  formSubmitFailSnackbar.timeoutMs = 4000;
+  formSubmitFailSnackbar.open();
+}, 6000);
