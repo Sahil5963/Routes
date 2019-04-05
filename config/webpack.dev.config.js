@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     main: ["./js/index.js"],
     app: ["./js/app.js"],
+    sidebar: ["./js/sidebar.js"],
     dataTable: ["./js/dataTable.js"]
   },
   mode: "development",
@@ -24,7 +25,7 @@ module.exports = {
   //   },
   // },
   plugins: [
-    new HtmlWebpackPlugin({ 
+    new HtmlWebpackPlugin({
       filename: 'sighnup.html',
       template: './src/sighnup.html'
     })
@@ -35,31 +36,33 @@ module.exports = {
     watchContentBase: true
   },
   module: {
-    rules: [
-        { parser: { amd: false } },
+    rules: [{
+        parser: {
+          amd: false
+        }
+      },
 
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "images/[name].[ext]"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "images/[name].[ext]"
           }
-        ]
+        }]
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader
           },
           {
             loader: "css-loader",
-            options: { url: false }
+            options: {
+              url: false
+            }
           },
-          
+
           {
             loader: "postcss-loader",
             options: {
@@ -78,8 +81,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          {
+        use: [{
             loader: "file-loader",
             options: {
               name: "[name].html"
@@ -99,14 +101,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              plugins: ["transform-es2015-arrow-functions"]
-            }
+        use: [{
+          loader: "babel-loader",
+          options: {
+            plugins: ["transform-es2015-arrow-functions"]
           }
-        ]
+        }]
       }
     ]
   },
@@ -116,7 +116,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery:'jquery'
+      jQuery: 'jquery'
     })
   ]
 };

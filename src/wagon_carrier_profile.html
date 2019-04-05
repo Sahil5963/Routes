@@ -2,335 +2,353 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fleet Management - Train Profile</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fleet Management - Train Profile</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
-    <link rel="stylesheet" href="css/main.css">
-    
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.semanticui.min.css">
+
+  <link rel="stylesheet" href="css/main.css">
+
 
 </head>
 
-<body >
+<body>
 
-    <aside class="sidebar  sidebar--expanded" id="sidebar">
-        <div class="sidebar__logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="129" height="40" >
-                <g id="Group_173" data-name="Group 173" transform="translate(0)">
-                  <g id="microsoft-teams">
-                    <g id="Group_172" data-name="Group 172">
-                      <path id="Path_33" data-name="Path 33" d="M34.243,15.276a3.617,3.617,0,1,0-.778-1.154,3.7,3.7,0,0,0,.778,1.154Zm-1.06,3.36V29.545H35a10.345,10.345,0,0,0,1.86-.177,5.8,5.8,0,0,0,1.762-.615,3.929,3.929,0,0,0,1.313-1.159,3,3,0,0,0,.518-1.809V18.637Zm-5.892-4.573A3.517,3.517,0,0,0,28.7,13.78a3.626,3.626,0,0,0,0-6.68,3.519,3.519,0,0,0-1.408-.284,3.471,3.471,0,0,0-1.4.284c-.33.141-.433.324-.887.545v5.589c.455.223.557.4.887.545a3.467,3.467,0,0,0,1.4.284ZM25,32.43c.455.1.618.175.941.219a7.732,7.732,0,0,0,1.067.078,8.059,8.059,0,0,0,1.639-.177,4.843,4.843,0,0,0,1.554-.606,3.569,3.569,0,0,0,1.159-1.15,3.307,3.307,0,0,0,.457-1.808V16.364H25ZM0,35.909,23.636,40V0L0,4.091Z" fill="#fff"/>
-                    </g>
-                    <path id="Path_34" data-name="Path 34" d="M385.509,722.4l-10.908.664v2.516l4.091-.165v11.666l2.727.16V725.308l4.091-.182Z" transform="translate(-368.236 -710.127)" fill="#361ea0"/>
-                  </g>
-                  <text id="Railcomm" transform="translate(54 26)" fill="#fff" font-size="16" font-family="Quicksand-Regular, Quicksand"><tspan x="0" y="0">Railcomm</tspan></text>
-                </g>
-              </svg>
+  <aside class="sidebar  sidebar--expanded" id="sidebar">
+    <div class="sidebar__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="129" height="40">
+        <g id="Group_173" data-name="Group 173" transform="translate(0)">
+          <g id="microsoft-teams">
+            <g id="Group_172" data-name="Group 172">
+              <path id="Path_33" data-name="Path 33"
+                d="M34.243,15.276a3.617,3.617,0,1,0-.778-1.154,3.7,3.7,0,0,0,.778,1.154Zm-1.06,3.36V29.545H35a10.345,10.345,0,0,0,1.86-.177,5.8,5.8,0,0,0,1.762-.615,3.929,3.929,0,0,0,1.313-1.159,3,3,0,0,0,.518-1.809V18.637Zm-5.892-4.573A3.517,3.517,0,0,0,28.7,13.78a3.626,3.626,0,0,0,0-6.68,3.519,3.519,0,0,0-1.408-.284,3.471,3.471,0,0,0-1.4.284c-.33.141-.433.324-.887.545v5.589c.455.223.557.4.887.545a3.467,3.467,0,0,0,1.4.284ZM25,32.43c.455.1.618.175.941.219a7.732,7.732,0,0,0,1.067.078,8.059,8.059,0,0,0,1.639-.177,4.843,4.843,0,0,0,1.554-.606,3.569,3.569,0,0,0,1.159-1.15,3.307,3.307,0,0,0,.457-1.808V16.364H25ZM0,35.909,23.636,40V0L0,4.091Z"
+                fill="#fff" />
+            </g>
+            <path id="Path_34" data-name="Path 34"
+              d="M385.509,722.4l-10.908.664v2.516l4.091-.165v11.666l2.727.16V725.308l4.091-.182Z"
+              transform="translate(-368.236 -710.127)" fill="#361ea0" />
+          </g>
+          <text id="Railcomm" transform="translate(54 26)" fill="#fff" font-size="16"
+            font-family="Quicksand-Regular, Quicksand">
+            <tspan x="0" y="0">Railcomm</tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="sidebar__nav">
+      <li class="sidebar__nav__item">
+        <a class="sidebar__nav__link mdc-ripple-surface" href="index.html">
+          <i class="material-icons">home</i>Dashboard</a>
+      </li>
+
+      <li class="sidebar__nav__item">
+        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down active" href="#">
+          <i class="material-icons">directions_bus</i>
+          <span> Fleet Management</span>
+
+          <i class="material-icons trailing">
+            expand_more
+          </i>
+        </a>
+
+        <div class="sidebar__nav__link__drop-down" data-collapsed="false">
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active"
+            href="train_profile.html">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Train Profile
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Coach
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Wagons and Carriers
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Category
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Facility Types
+          </a>
         </div>
 
-        <ul class="sidebar__nav">
-            <li class="sidebar__nav__item">
-                <a class="sidebar__nav__link mdc-ripple-surface" href="index.html">
-                    <i class="material-icons">home</i>Dashboard</a>
-            </li>
+      </li>
 
-            <li class="sidebar__nav__item">
-                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down active" href="#">
-                    <i class="material-icons">directions_bus</i>
-                    <span> Fleet Management</span>
+      <li class="sidebar__nav__item">
+        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down " href="#">
+          <i class="material-icons">
+            location_on
+          </i>
+          <span> Trip Management</span>
 
-                    <i class="material-icons trailing">
-                            expand_more
-                            </i>
-                </a>
-                    
-                    <div class="sidebar__nav__link__drop-down"  data-collapsed="false">
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active" href="train_profile.html">
-                                <i class="material-icons">
-                                        subdirectory_arrow_right
-                                        </i>
-                                        Train Profile
-                        </a>
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                                <i class="material-icons">
-                                        subdirectory_arrow_right
-                                        </i>
-                                        Coach
-                        </a>
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                            <i class="material-icons">
-                                    subdirectory_arrow_right
-                                    </i>
-                                    Wagons and Carriers
-                    </a>
-                    <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                        <i class="material-icons">
-                                subdirectory_arrow_right
-                                </i>
-                                Category
-                </a>
-                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                    <i class="material-icons">
-                            subdirectory_arrow_right
-                            </i>
-                            Facility Types
-            </a>
-                    </div>
-                
-            </li>
+          <i class="material-icons trailing">
+            expand_more
+          </i>
+        </a>
 
-            <li class="sidebar__nav__item">
-                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down " href="#">
-                    <i class="material-icons">
-                        location_on
-                        </i>
-                    <span> Trip Management</span>
+        <div class="sidebar__nav__link__drop-down" data-collapsed="true">
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Destination / Station
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Lane / Track
 
-                    <i class="material-icons trailing">
-                            expand_more
-                            </i>
-                </a>
-                    
-                    <div class="sidebar__nav__link__drop-down"  data-collapsed="true">
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link active" href="#">
-                                <i class="material-icons">
-                                        subdirectory_arrow_right
-                                        </i>
-                                        Destination / Station
-                        </a>
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                                <i class="material-icons">
-                                        subdirectory_arrow_right
-                                        </i>
-                                        Lane / Track
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Route
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Schedule / Trips
+          </a>
+          <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
+            <i class="material-icons">
+              subdirectory_arrow_right
+            </i>
+            Report
 
-                        </a>
-                        <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                            <i class="material-icons">
-                                    subdirectory_arrow_right
-                                    </i>
-                                    Route
-                    </a>
-                    <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                        <i class="material-icons">
-                                subdirectory_arrow_right
-                                </i>
-                                Schedule / Trips
-                </a>
-                <a class="sidebar__nav__link mdc-ripple-surface sidebar__nav__link--drop-down-link" href="#">
-                    <i class="material-icons">
-                            subdirectory_arrow_right
-                            </i>
-                            Report
+          </a>
+        </div>
 
-            </a>
-                    </div>
-                
-            </li>
+      </li>
 
 
 
 
-            </nav>
+      </nav>
 
-    </aside>
+  </aside>
 
-    <main>
-
-            
-        <header class="mdc-top-app-bar ">
-            <div class="mdc-top-app-bar__row">
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" id="toggle-menu">menu</a>
-                    <span class="mdc-top-app-bar__title font">Fleet Management - Wagon and Carriers</span>
-                </section>
-                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">settings</a>
-                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page" alt="Print this page">textsms</a>
-                        <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">directions_subway</a>
-                      </section>
-            </div>
-        </header>
-
-        <div class="main-content mdc-top-app-bar--fixed-adjust">
-          <div class="mdc-layout-grid  table-page">
-            <div class="mdc-layout-grid__inner table-page__toolbar">
-              <div class="mdc-layout-grid__cell--span-12">
-                  <button class="mdc-button add-button  mdc-button--raised mdc-ripple-surface">
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">add_circle</i>
-                      <span class="mdc-button__label">Add New Wagon</span>
-                    </button>
-              </div>
+  <main>
 
 
+    <header class="mdc-top-app-bar ">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <a href="#" class="material-icons mdc-top-app-bar__navigation-icon" id="toggle-menu">menu</a>
+          <span class="mdc-top-app-bar__title font">Fleet Management - Wagon and Carriers</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download"
+            alt="Download">settings</a>
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Print this page"
+            alt="Print this page">textsms</a>
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page"
+            alt="Bookmark this page">directions_subway</a>
+        </section>
+      </div>
+    </header>
 
-
-
- 
-        
-               
-
-
-              </div>
-
-              <div class="mdc-layout-grid__inner table-page table-page__content">
-
-                  <div class="mdc-layout-grid__cell--span-12">
-                      
-                  <table id="table" class="row-border ui table responsive " style="width:100%">
-                      <thead>
-                          <tr>
-                              <th>SL No.</th>
-                              <th>Wagon Name</th>
-                              <th>Wagon Type</th>
-                              <th>Train</th>
-                              <th>Layout</th>
-                              <th>Status</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>0002</td>
-                              <td>Legacy</td>
-                              <td>VIP</td>
-                              <td>Lemax</td>
-                              <td>3 X 3</td>
-                              <td><div class="mdc-chip-set">
-                                    <div class="mdc-chip active-chip" tabindex="0">
-                                      <div class="mdc-chip__text">Active</div>
-                                    </div>
-                                  </div>
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>0002</td>
-                                <td>Legacy</td>
-                                <td>VIP</td>
-                                <td>Lemax</td>
-                                <td>3 X 3</td>
-                                <td><div class="mdc-chip-set">
-                                      <div class="mdc-chip active-chip" tabindex="0">
-                                        <div class="mdc-chip__text">Active</div>
-                                      </div>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                  <td>0002</td>
-                                  <td>Legacy</td>
-                                  <td>VIP</td>
-                                  <td>Lemax</td>
-                                  <td>3 X 3</td>
-                                  <td><div class="mdc-chip-set">
-                                        <div class="mdc-chip active-chip" tabindex="0">
-                                          <div class="mdc-chip__text">Active</div>
-                                        </div>
-                                      </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                    <td>0002</td>
-                                    <td>Legacy</td>
-                                    <td>VIP</td>
-                                    <td>Lemax</td>
-                                    <td>3 X 3</td>
-                                    <td><div class="mdc-chip-set">
-                                          <div class="mdc-chip active-chip" tabindex="0">
-                                            <div class="mdc-chip__text">Active</div>
-                                          </div>
-                                        </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                      <td>0002</td>
-                                      <td>Legacy</td>
-                                      <td>VIP</td>
-                                      <td>Lemax</td>
-                                      <td>3 X 3</td>
-                                      <td><div class="mdc-chip-set">
-                                            <div class="mdc-chip not-active-chip" tabindex="0">
-                                              <div class="mdc-chip__text">Not Active</div>
-                                            </div>
-                                          </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                        <td>0002</td>
-                                        <td>Legacy</td>
-                                        <td>VIP</td>
-                                        <td>Lemax</td>
-                                        <td>3 X 3</td>
-                                        <td><div class="mdc-chip-set">
-                                              <div class="mdc-chip active-chip" tabindex="0">
-                                                <div class="mdc-chip__text">Active</div>
-                                              </div>
-                                            </div>
-                                        </td>
-                                      </tr>
-
-                          
-                        
-                          
-                      </tbody>
-          
-                  </table>
-
-                  </div>
-
-              </div>
-
-            </div>
-
-
-            
+    <div class="main-content mdc-top-app-bar--fixed-adjust">
+      <div class="mdc-layout-grid  table-page">
+        <div class="mdc-layout-grid__inner table-page__toolbar">
+          <div class="mdc-layout-grid__cell--span-12">
+            <button class="mdc-button add-button  mdc-button--raised mdc-ripple-surface">
+              <i class="material-icons mdc-button__icon" aria-hidden="true">add_circle</i>
+              <span class="mdc-button__label">Add New Wagon</span>
+            </button>
           </div>
-                      </div>
+
+
+
+
+
+
+
+
+
 
         </div>
 
+        <div class="mdc-layout-grid__inner table-page table-page__content">
 
-    </main>
+          <div class="mdc-layout-grid__cell--span-12">
+
+            <table id="table" class="row-border ui table responsive " style="width:100%">
+              <thead>
+                <tr>
+                  <th>SL No.</th>
+                  <th>Wagon Name</th>
+                  <th>Wagon Type</th>
+                  <th>Train</th>
+                  <th>Layout</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip not-active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Not Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>0002</td>
+                  <td>Legacy</td>
+                  <td>VIP</td>
+                  <td>Lemax</td>
+                  <td>3 X 3</td>
+                  <td>
+                    <div class="mdc-chip-set">
+                      <div class="mdc-chip active-chip" tabindex="0">
+                        <div class="mdc-chip__text">Active</div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
-    <script src="js/app.js"></script>
-    <script>
+
+    </div>
+    </div>
+
+    </div>
+
+
+  </main>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/dataTables.semanticui.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.semanticui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+
+
+  <script src="js/app.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script>
     $(document).ready(function () {
-  const table = $('#table').DataTable({
-    "dom": '<"top"iBf>rt<"bottom"ilp>',
-    responsive: true,
-    buttons: ['copy', 'excel', 'pdf', 'colvis',],
-    lengthChange: false,
-  
-  });
+      const table = $('#table').DataTable({
+        "dom": '<"top"iBf>rt<"bottom"ilp>',
+        responsive: true,
+        buttons: ['copy', 'excel', 'pdf', 'colvis', ],
+        lengthChange: false,
 
-  table.buttons().container()
-        .appendTo( $('div.eight.column:eq(0)', table.table().container()) );
-});
-    </script>
-    
+      });
+
+      table.buttons().container()
+        .appendTo($('div.eight.column:eq(0)', table.table().container()));
+    });
+  </script>
+
 
 
 

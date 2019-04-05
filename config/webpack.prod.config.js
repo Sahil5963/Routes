@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     main: ["./js/index.js"],
     app: ["./js/app.js"],
+    sidebar: ["./js/sidebar.js"],
     dataTable: ["./js/dataTable.js"]
   },
   mode: "production",
@@ -23,12 +24,14 @@ module.exports = {
     publicPath: "/"
   },
   module: {
-    rules: [
-      { parser: { amd: false } },
+    rules: [{
+        parser: {
+          amd: false
+        }
+      },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
+        use: [{
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
@@ -60,13 +63,14 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader
           },
           {
             loader: "css-loader",
-            options: { url: false }
+            options: {
+              url: false
+            }
           },
           {
             loader: "postcss-loader",
@@ -86,8 +90,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          {
+        use: [{
             loader: "file-loader",
             options: {
               name: "[name].html"
@@ -108,14 +111,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              plugins: ["transform-es2015-arrow-functions"]
-            }
+        use: [{
+          loader: "babel-loader",
+          options: {
+            plugins: ["transform-es2015-arrow-functions"]
           }
-        ]
+        }]
       }
     ]
   },
@@ -125,7 +126,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery:'jquery'
+      jQuery: 'jquery'
     })
   ]
 };
