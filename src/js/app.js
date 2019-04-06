@@ -169,68 +169,24 @@ function initializeSnackbar(el) {
   }
 }
 
-const formSubmitSuccessSnackbar = initializeSnackbar(
-  document.querySelector("#form-submit-success-snackbar")
-);
-const formSubmitFailSnackbar = initializeSnackbar(
-  document.querySelector("#form-submit-fail-snackbar")
-);
-
-if (formSubmitSuccessSnackbar) {
-  window.setTimeout(() => {
-    console.log("I am on");
-    formSubmitSuccessSnackbar.timeoutMs = 4000;
-    const div = document.createElement('div');
-    div.innerHTML = `<div class="mdc-snackbar custom-sanckbar custom-sanckbar--success" id="form-submit-success-snackbar">
-      <div class="mdc-snackbar__surface custom-sanckbar__surface">
-        <div class="custom-sanckbar__icon">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <circle class="path circle" fill="#fff" cx="65.1" cy="65.1" r="62.1" />
-            <polyline class="path check" fill="none" stroke="#2CB10C" stroke-width="8" stroke-linecap="round"
-              stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
-          </svg>
-        </div>
-        <div class="mdc-snackbar__label custom-sanckbar__label" role="status" aria-live="polite">
-          Data Added Succesfully !
-        </div>
-        <div class="mdc-snackbar__actions custom-sanckbar__actions">
-          <button class="mdc-icon-button mdc-snackbar__dismiss material-icons custom-sanckbar__dismiss"
-            title="Dismiss">close</button>
-        </div>
-      </div>
-    </div>`;
-
-    console.log(div);
-    formSubmitSuccessSnackbar.open();
-    document.querySelector('main').appendChild(div);
-
-  }, 1000);
-}
-
-// if (formSubmitFailSnackbar) {
-//   window.setTimeout(() => {
-//     console.log("I am on");
-//     formSubmitFailSnackbar.timeoutMs = 4000;
-//     formSubmitFailSnackbar.open();
-//   }, 6000);
-// }
+window.initializeSnackbar = initializeSnackbar;
 
 
-const deleteTableRecordDialogs = [...document.querySelectorAll("#delete-table-row")].map(el => new MDCDialog(el));
-
-const deleteTableRecordButtons = document.querySelectorAll("#delete-table-record"); // delete-table-record
 
 
+const deleteTableRecordDialogs = [
+  ...document.querySelectorAll("#delete-table-row")
+].map(el => new MDCDialog(el));
+
+const deleteTableRecordButtons = document.querySelectorAll(
+  "#delete-table-record"
+); // delete-table-record
 
 if (deleteTableRecordButtons.length) {
-
   for (let i = 0; i < deleteTableRecordDialogs.length; i++) {
-    deleteTableRecordButtons[i].addEventListener('click', e => {
+    deleteTableRecordButtons[i].addEventListener("click", e => {
       e.preventDefault();
       deleteTableRecordDialogs[i].open();
-    })
-
-
+    });
   }
-
 }

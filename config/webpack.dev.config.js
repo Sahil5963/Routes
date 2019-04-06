@@ -11,13 +11,16 @@ module.exports = {
     main: ["./js/index.js"],
     app: ["./js/app.js"],
     sidebar: ["./js/sidebar.js"],
-    dataTable: ["./js/dataTable.js"]
+    dataTable: ["./js/dataTable.js"],
+    test: ["./js/test.js"],
   },
   mode: "development",
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../dist/"),
-    publicPath: "/"
+    publicPath: "/",
+    libraryTarget: 'var',
+    library: 'EntryPoint'
   },
   // optimization: {
   //   splitChunks: {

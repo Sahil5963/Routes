@@ -551,29 +551,6 @@
                 <span class="mdc-button__label">Reset</span>
               </button>
 
-
-
-              <div class="mdc-snackbar custom-sanckbar custom-sanckbar--fail" id="form-submit-fail-snackbar">
-                <div class="mdc-snackbar__surface custom-sanckbar__surface">
-                  <div class="custom-sanckbar__icon">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-                      <circle class="path circle" fill="#fff" cx="65.1" cy="65.1" r="62.1" />
-                      <line class="path line" fill="none" stroke="#FB4747" stroke-width="8" stroke-linecap="round"
-                        stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
-                      <line class="path line" fill="none" stroke="#FB4747" stroke-width="8" stroke-linecap="round"
-                        stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
-                    </svg>
-                  </div>
-                  <div class="mdc-snackbar__label custom-sanckbar__label" role="status" aria-live="polite">
-                    Data Not Added Succesfully!
-                  </div>
-                  <div class="mdc-snackbar__actions custom-sanckbar__actions">
-                    <button class="mdc-icon-button mdc-snackbar__dismiss material-icons custom-sanckbar__dismiss"
-                      title="Dismiss">close</button>
-                  </div>
-                </div>
-              </div>
-
             </div>
 
         </form>
@@ -592,11 +569,75 @@
 
   <script src="js/app.js"></script>
   <script src="js/sidebar.js"></script>
-
   <script>
+    const successSnackbar = (parentNode, timeout, message) => {
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="mdc-snackbar custom-sanckbar custom-sanckbar--success" id="form-submit-success-snackbar">
+      <div class="mdc-snackbar__surface custom-sanckbar__surface">
+        <div class="custom-sanckbar__icon">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="#fff" cx="65.1" cy="65.1" r="62.1" />
+            <polyline class="path check" fill="none" stroke="#2CB10C" stroke-width="8" stroke-linecap="round"
+              stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+          </svg>
+        </div>
+        <div class="mdc-snackbar__label custom-sanckbar__label" role="status" aria-live="polite">
+          ${message}
+        </div>
+        <div class="mdc-snackbar__actions custom-sanckbar__actions">
+          <button class="mdc-icon-button mdc-snackbar__dismiss material-icons custom-sanckbar__dismiss"
+            title="Dismiss">close</button>
+        </div>
+      </div>
+    </div>`;
+      document.querySelector(parentNode).appendChild(div);
+      const formSubmitSuccessSnackbar = window.initializeSnackbar(
+        document.querySelector("#form-submit-success-snackbar")
+      );
+      formSubmitSuccessSnackbar.timeoutMs = timeout;
+      formSubmitSuccessSnackbar.open();
+    };
 
+    const failSnackbar = (parentNode, timeout, message) => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+  <div class="mdc-snackbar custom-sanckbar custom-sanckbar--fail" id="form-submit-fail-snackbar">
+    <div class="mdc-snackbar__surface custom-sanckbar__surface">
+      <div class="custom-sanckbar__icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle" fill="#fff" cx="65.1" cy="65.1" r="62.1" />
+          <line class="path line" fill="none" stroke="#FB4747" stroke-width="8" stroke-linecap="round"
+            stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3" />
+          <line class="path line" fill="none" stroke="#FB4747" stroke-width="8" stroke-linecap="round"
+            stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2" />
+        </svg>
+      </div>
+      <div class="mdc-snackbar__label custom-sanckbar__label" role="status" aria-live="polite">
+        ${message}
+      </div>
+      <div class="mdc-snackbar__actions custom-sanckbar__actions">
+        <button class="mdc-icon-button mdc-snackbar__dismiss material-icons custom-sanckbar__dismiss"
+          title="Dismiss">close</button>
+      </div>
+    </div>
+  </div>`;
+      document.querySelector(parentNode).appendChild(div);
+      const formSubmitFailSnackbar = window.initializeSnackbar(
+        document.querySelector("#form-submit-fail-snackbar")
+      );
+      formSubmitFailSnackbar.timeoutMs = timeout;
+      formSubmitFailSnackbar.open();
+    };
 
+    window.setTimeout(() => {
+      successSnackbar("main", 4000, "Dono Not use This");
+    }, 1000);
+
+    window.setTimeout(() => {
+      failSnackbar("main", 4000, "Use This");
+    }, 6000);
   </script>
+
 
 
 

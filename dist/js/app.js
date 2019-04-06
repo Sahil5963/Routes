@@ -10416,25 +10416,7 @@ function initializeSnackbar(el) {
   }
 }
 
-const formSubmitSuccessSnackbar = initializeSnackbar(document.querySelector("#form-submit-success-snackbar"));
-const formSubmitFailSnackbar = initializeSnackbar(document.querySelector("#form-submit-fail-snackbar"));
-
-if (formSubmitSuccessSnackbar) {
-  window.setTimeout(function () {
-    console.log("I am on");
-    formSubmitSuccessSnackbar.timeoutMs = 4000;
-    formSubmitSuccessSnackbar.open();
-  }, 1000);
-}
-
-if (formSubmitFailSnackbar) {
-  window.setTimeout(function () {
-    console.log("I am on");
-    formSubmitFailSnackbar.timeoutMs = 4000;
-    formSubmitFailSnackbar.open();
-  }, 6000);
-}
-
+window.initializeSnackbar = initializeSnackbar;
 const deleteTableRecordDialogs = [...document.querySelectorAll("#delete-table-row")].map(function (el) {
   return new component_MDCDialog(el);
 });
@@ -10442,7 +10424,7 @@ const deleteTableRecordButtons = document.querySelectorAll("#delete-table-record
 
 if (deleteTableRecordButtons.length) {
   for (let i = 0; i < deleteTableRecordDialogs.length; i++) {
-    deleteTableRecordButtons[i].addEventListener('click', function (e) {
+    deleteTableRecordButtons[i].addEventListener("click", function (e) {
       e.preventDefault();
       deleteTableRecordDialogs[i].open();
     });

@@ -372,37 +372,39 @@
         }
     }
 
-    .custom-sanckbar {
 
-        &--success {
-            @include mdc-snackbar-fill-color($green-color);
-        }
+}
 
-        &--fail {
-            @include mdc-snackbar-fill-color($red-color);
-        }
+.custom-sanckbar {
 
-        &__surface {
-            width: 50%;
-            padding: 16px;
-            margin-top: 10px;
-        }
+    &--success {
+        @include mdc-snackbar-fill-color($green-color);
+    }
 
-        &__icon {
-            height: 60px;
-            flex: 0 0 60px;
-        }
+    &--fail {
+        @include mdc-snackbar-fill-color($red-color);
+    }
 
-        &__label {
-            font-family: inherit;
-            font-size: 20px;
-            margin-left: 8px;
-        }
+    &__surface {
+        width: 50%;
+        padding: 16px;
+        margin-top: 10px;
+    }
 
-        &__actions {}
+    &__icon {
+        height: 60px;
+        flex: 0 0 60px;
+    }
 
-        &__dismiss {
-            font-size: 20px;
-        }
+    &__label {
+        font-family: inherit;
+        font-size: 20px;
+        margin-left: 8px;
+    }
+
+    &__actions {}
+
+    &__dismiss {
+        font-size: 20px;
     }
 }
