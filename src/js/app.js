@@ -163,13 +163,15 @@ if (addSeatTypeBtn) {
   });
 }
 
-function initializeSnackbar(el) {
+export function initializeSnackbar(el) {
   if (el) {
     return new MDCSnackbar(el);
   }
 }
 
-window.initializeSnackbar = initializeSnackbar;
+export function get() {
+  console.log("hey");
+}
 
 
 

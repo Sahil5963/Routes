@@ -19,8 +19,8 @@ module.exports = {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../dist/"),
     publicPath: "/",
-    libraryTarget: 'var',
-    library: 'EntryPoint'
+    library: ["App", "[name]"],
+    libraryTarget: "umd"
   },
   // optimization: {
   //   splitChunks: {

@@ -15,13 +15,15 @@ module.exports = {
     main: ["./js/index.js"],
     app: ["./js/app.js"],
     sidebar: ["./js/sidebar.js"],
-    dataTable: ["./js/dataTable.js"]
+    dataTable: ["./js/dataTable.js"],
   },
   mode: "production",
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "../dist/"),
-    publicPath: "/"
+    publicPath: "/",
+    library: ["App", "[name]"],
+    libraryTarget: "umd"
   },
   module: {
     rules: [{
