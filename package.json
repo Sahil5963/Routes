@@ -16,7 +16,9 @@
     "os": false
   },
   "dependencies": {
+    "@material/auto-init": "^1.0.0",
     "@material/button": "^1.0.1",
+    "@material/checkbox": "^1.1.0",
     "@material/chips": "^1.0.1",
     "@material/dialog": "^1.1.0",
     "@material/form-field": "^1.0.1",

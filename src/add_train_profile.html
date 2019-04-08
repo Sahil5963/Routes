@@ -569,8 +569,8 @@
 
   <script src="js/app.js"></script>
   <script src="js/sidebar.js"></script>
+  <script src="js/messageAlerts.js"></script>
   <script>
-
     const successSnackbar = (parentNode, timeout, message) => {
       const div = document.createElement("div");
       div.innerHTML = `<div class="mdc-snackbar custom-sanckbar custom-sanckbar--success" id="form-submit-success-snackbar">
@@ -592,7 +592,7 @@
       </div>
     </div>`;
       document.querySelector(parentNode).appendChild(div);
-      const formSubmitSuccessSnackbar = App.app.initializeSnackbar(
+      const formSubmitSuccessSnackbar = App.messageAlerts.initializeSnackbar(
         document.querySelector("#form-submit-success-snackbar")
       );
       formSubmitSuccessSnackbar.timeoutMs = timeout;
@@ -623,7 +623,7 @@
     </div>
   </div>`;
       document.querySelector(parentNode).appendChild(div);
-      const formSubmitFailSnackbar = App.app.initializeSnackbar(
+      const formSubmitFailSnackbar = App.messageAlerts.initializeSnackbar(
         document.querySelector("#form-submit-fail-snackbar")
       );
       formSubmitFailSnackbar.timeoutMs = timeout;

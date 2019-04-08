@@ -20,6 +20,7 @@ $mdc-theme-on-secondary: #ffffff;
 
 @import "@material/form-field/mdc-form-field";
 @import "@material/radio/mdc-radio";
+@import "@material/checkbox/mdc-checkbox";
 
 @import "@material/icon-button/mdc-icon-button";
 
@@ -30,6 +31,10 @@ $mdc-theme-on-secondary: #ffffff;
 @import 'utilities';
 @import 'pages/basic';
 
+// Form Pages
+@import 'pages/trip_mangement';
+
+
 html,
 body {
   padding: 0px;
@@ -39,16 +44,11 @@ body {
 
 
 
-.mdc-text-field--full-width , .mdc-select--full-width{
+.mdc-text-field--full-width,
+.mdc-select--full-width {
   width: 100%;
 }
 
-.mdc-select--overflow{
+.mdc-select--overflow {
   overflow: visible;
 }
-
-
-
-
-
-

@@ -1,3 +1,5 @@
+import mdcAutoInit from '@material/auto-init';
+
 import {
   MDCTopAppBar
 } from "@material/top-app-bar/index";
@@ -24,6 +26,11 @@ import {
 import {
   MDCRadio
 } from "@material/radio";
+
+import {
+  MDCCheckbox
+} from '@material/checkbox';
+
 import {
   MDCDialog
 } from "@material/dialog";
@@ -75,12 +82,12 @@ const lists = [].map.call(document.querySelectorAll(".mdc-list"), function (el) 
   return new MDCList(el);
 });
 
-const textFields = [].map.call(
-  document.querySelectorAll(".mdc-text-field"),
-  function (el) {
-    return new MDCTextField(el);
-  }
-);
+// const textFields = [].map.call(
+//   document.querySelectorAll(".mdc-text-field"),
+//   function (el) {
+//     return new MDCTextField(el);
+//   }
+// );
 
 const buttonRipples = [].map.call(
   document.querySelectorAll(".mdc-button"),
@@ -163,17 +170,6 @@ if (addSeatTypeBtn) {
   });
 }
 
-export function initializeSnackbar(el) {
-  if (el) {
-    return new MDCSnackbar(el);
-  }
-}
-
-export function get() {
-  console.log("hey");
-}
-
-
 
 
 const deleteTableRecordDialogs = [
@@ -192,3 +188,17 @@ if (deleteTableRecordButtons.length) {
     });
   }
 }
+
+
+
+mdcAutoInit.register('MDCTextField', MDCTextField);
+
+
+window.mdcAutoInit = mdcAutoInit;
+
+
+document.addEventListener("MDCAutoInit:End", () => {
+  console.log("Initialized")
+});
+
+window.mdcAutoInit();

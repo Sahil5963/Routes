@@ -16,6 +16,7 @@ module.exports = {
     app: ["./js/app.js"],
     sidebar: ["./js/sidebar.js"],
     dataTable: ["./js/dataTable.js"],
+    messageAlerts: ["./js/messageAlerts.js"],
   },
   mode: "production",
   output: {

@@ -1,0 +1,69 @@
+// Destination Station Form
+
+.image-upload__controls {
+    z-index: 1;
+
+    input {
+        display: none;
+
+    }
+}
+
+.image-upload__preview {
+    width: 100%;
+    height: 192px;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+
+    >div {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        border-radius: 6px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+// Destination Station Form Ends
+
+
+
+
+
+
+
+// Route Page - Add Destination Stastion Form
+
+.destination-stations {
+
+    margin-top: 16px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &__button {
+        text-transform: none;
+    }
+
+
+    &__content {
+        padding: 0px 10px;
+        align-items: center;
+    }
+
+
+    &__form-sections {
+        margin-bottom: 12px;
+        align-items: center !important;
+    }
+
+
+}

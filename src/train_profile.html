@@ -1261,6 +1261,18 @@
         $(this).parent().parent().parent().parent().parent().parent().remove();
       });
 
+      $('#table').on('click', 'tbody tr', function () {
+
+        const row = this;
+
+        $('button#delete-record').on('click', function () {
+          table.row(row).remove().draw();
+        });
+
+
+
+      });
+
     });
   </script>
 

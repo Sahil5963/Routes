@@ -12,6 +12,7 @@ module.exports = {
     app: ["./js/app.js"],
     sidebar: ["./js/sidebar.js"],
     dataTable: ["./js/dataTable.js"],
+    messageAlerts: ["./js/messageAlerts.js"],
     test: ["./js/test.js"],
   },
   mode: "development",
