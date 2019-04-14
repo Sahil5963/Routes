@@ -599,6 +599,8 @@
       formSubmitSuccessSnackbar.open();
     };
 
+
+
     const failSnackbar = (parentNode, timeout, message) => {
       const div = document.createElement("div");
       div.innerHTML = `
@@ -631,12 +633,16 @@
     };
 
     window.setTimeout(() => {
-      successSnackbar("main", 4000, "Dono Not use This");
+      successSnackbar("main", 2000, "Dono Not use This");
     }, 1000);
 
     window.setTimeout(() => {
-      failSnackbar("main", 4000, "Use This");
-    }, 6000);
+      failSnackbar("main", 2000, "Use This");
+    }, 3000);
+
+    window.setTimeout(() => {
+      failSnackbar("main", 2000, "Use This");
+    }, 3000);
   </script>
 
 

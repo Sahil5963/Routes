@@ -82,12 +82,12 @@ const lists = [].map.call(document.querySelectorAll(".mdc-list"), function (el) 
   return new MDCList(el);
 });
 
-// const textFields = [].map.call(
-//   document.querySelectorAll(".mdc-text-field"),
-//   function (el) {
-//     return new MDCTextField(el);
-//   }
-// );
+const textFields = [].map.call(
+  document.querySelectorAll(".mdc-text-field"),
+  function (el) {
+    return new MDCTextField(el);
+  }
+);
 
 const buttonRipples = [].map.call(
   document.querySelectorAll(".mdc-button"),
@@ -124,13 +124,21 @@ const formPageAddSeatBtn = document.getElementById("form-page-add-seat-btn");
 //   }
 // });
 
-const chipSetEl = document.querySelector(".mdc-chip-set");
+let addedSeatTypes = [];
+
+
+const chipSetEl = document.querySelector("#form-page-chip-set-add-seat-type");
+export const chipSet = new MDCChipSet(chipSetEl);
 if (chipSetEl) {
-  const chipSet = new MDCChipSet(chipSetEl);
+  const addedSeatTypesInput = document.querySelector('#added-seat-types');
 
   if (formPageAddSeatValue && formPageAddSeatBtn) {
+
+
+
     formPageAddSeatBtn.addEventListener("click", function (event) {
       event.preventDefault();
+
       const chipEl = document.createElement("div");
       chipEl.classList.add("mdc-chip", "add-seat-type-chip");
       chipEl.innerHTML = `<div class="mdc-chip__text">${
@@ -142,13 +150,33 @@ if (chipSetEl) {
       chipSet.addChip(chipEl);
 
       formPageAddSeatValue.value = "";
+
+      if (addedSeatTypesInput) {
+        addedSeatTypesInput.setAttribute('data-added-seat-types', chipSet.chips.map(el => el.root_.firstElementChild.textContent));
+      }
+
+
+
     });
   }
 
   chipSet.listen("MDCChip:removal", function (event) {
     chipSetEl.removeChild(event.detail.root);
+    if (addedSeatTypesInput) {
+      addedSeatTypesInput.setAttribute('data-added-seat-types', chipSet.chips.map(el => el.root_.firstElementChild.textContent));
+    }
+
   });
+
+
+
+
+
 }
+
+
+
+
 
 // Add Seat Type Chip Dialog
 
@@ -191,14 +219,14 @@ if (deleteTableRecordButtons.length) {
 
 
 
-mdcAutoInit.register('MDCTextField', MDCTextField);
+// mdcAutoInit.register('MDCTextField', MDCTextField);
 
 
-window.mdcAutoInit = mdcAutoInit;
+// window.mdcAutoInit = mdcAutoInit;
 
 
-document.addEventListener("MDCAutoInit:End", () => {
-  console.log("Initialized")
-});
+// document.addEventListener("MDCAutoInit:End", () => {
+//   console.log("Initialized")
+// });
 
-window.mdcAutoInit();
+// window.mdcAutoInit();

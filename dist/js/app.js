@@ -9752,6 +9752,8 @@ var component_MDCChipSet = /** @class */ (function (_super) {
 
 //# sourceMappingURL=component.js.map
 // CONCATENATED MODULE: ./js/app.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addedSeatTypes", function() { return addedSeatTypes; });
+
 
 
 
@@ -9813,6 +9815,7 @@ const formPageAddSeatBtn = document.getElementById("form-page-add-seat-btn"); //
 //   }
 // });
 
+const addedSeatTypes = [];
 const chipSetEl = document.querySelector(".mdc-chip-set");
 
 if (chipSetEl) {
@@ -9821,6 +9824,7 @@ if (chipSetEl) {
   if (formPageAddSeatValue && formPageAddSeatBtn) {
     formPageAddSeatBtn.addEventListener("click", function (event) {
       event.preventDefault();
+      addedSeatTypes.push(formPageAddSeatValue.value);
       const chipEl = document.createElement("div");
       chipEl.classList.add("mdc-chip", "add-seat-type-chip");
       chipEl.innerHTML = `<div class="mdc-chip__text">${formPageAddSeatValue.value}</div>
@@ -9866,7 +9870,12 @@ if (deleteTableRecordButtons.length) {
       deleteTableRecordDialogs[i].open();
     });
   }
-}
+} // mdcAutoInit.register('MDCTextField', MDCTextField);
+// window.mdcAutoInit = mdcAutoInit;
+// document.addEventListener("MDCAutoInit:End", () => {
+//   console.log("Initialized")
+// });
+// window.mdcAutoInit();
 
 /***/ }),
 /* 47 */,
